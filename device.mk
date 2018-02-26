@@ -142,6 +142,9 @@ PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
     android.hardware.ir@1.0-service
 
+# Charger
+include $(LOCAL_PATH)/rootdir/charger/charger.mk
+
 # Display
 PRODUCT_PACKAGES += \
     copybit.msm8937 \
@@ -213,10 +216,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.health@2.0-impl \
     android.hardware.health@2.0-service
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/charger/animation.txt:root/res/values/charger/animation.txt \
-    $(LOCAL_PATH)/rootdir/charger/battery_font.png:root/res/images/charger/battery_font.png
 
 # HIDL
 PRODUCT_PACKAGES += \
