@@ -81,9 +81,9 @@ PRODUCT_PACKAGES += \
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-service \
-    android.hardware.audio@6.0-impl \
-    android.hardware.audio.effect@6.0-impl \
-    android.hardware.soundtrigger@2.2-impl \
+    android.hardware.audio@6.0-impl:32 \
+    android.hardware.audio.effect@6.0-impl:32 \
+    android.hardware.soundtrigger@2.2-impl:32 \
     audio.a2dp.default \
     audio.primary.msm8937 \
     audio.r_submix.default \
@@ -118,14 +118,14 @@ PRODUCT_COPY_FILES += \
 # Bluetooth
 PRODUCT_PACKAGES += \
     audio.bluetooth.default \
-    android.hardware.bluetooth.audio@2.0-impl \
+    android.hardware.bluetooth.audio@2.0-impl:32 \
     libbthost_if \
     vendor.qti.hardware.bluetooth_audio@2.0.vendor \
     vendor.qti.hardware.btconfigstore@1.0.vendor
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.4-impl \
+    android.hardware.camera.provider@2.4-impl:32 \
     android.hardware.camera.provider@2.4-service \
     camera.msm8937 \
     libmm-qcamera \
@@ -166,10 +166,10 @@ PRODUCT_PACKAGES += \
     libqdMetaData.system
 
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-impl:64 \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.mapper@2.0-impl-2.1 \
-    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.composer@2.1-impl:64 \
     android.hardware.graphics.composer@2.1-service \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
@@ -182,7 +182,7 @@ PRODUCT_COPY_FILES += \
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-impl:64 \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.3-service.clearkey \
     libprotobuf-cpp-lite
@@ -203,7 +203,7 @@ PRODUCT_PACKAGES += \
 
 # Gatekeeper HAL
 PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-impl \
+    android.hardware.gatekeeper@1.0-impl:64 \
     android.hardware.gatekeeper@1.0-service
 
 # GPS
@@ -215,7 +215,7 @@ PRODUCT_PACKAGES += \
 
 # Healthd
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.0-impl \
+    android.hardware.health@2.0-impl:64 \
     android.hardware.health@2.0-service
 
 # HIDL
@@ -263,7 +263,7 @@ PRODUCT_COPY_FILES += \
 
 # Keymaster
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0-impl \
+    android.hardware.keymaster@3.0-impl:64 \
     android.hardware.keymaster@3.0-service
 
 # Libshims
@@ -363,7 +363,7 @@ PRODUCT_COPY_FILES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl \
+    android.hardware.sensors@1.0-impl:64 \
     android.hardware.sensors@1.0-service \
     libsensorndkbridge
 
@@ -407,7 +407,7 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-impl \
+    android.hardware.vibrator@1.0-impl:64 \
     android.hardware.vibrator@1.0-service
 
 # VNDK
