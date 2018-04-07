@@ -15,3 +15,8 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/aosp_land.mk
+
+COMMON_LUNCH_CHOICES := \
+    aosp_land-user \
+    aosp_land-userdebug \
+    aosp_land-eng
