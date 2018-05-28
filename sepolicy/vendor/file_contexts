@@ -1,3 +1,6 @@
+# Camera
+/data/vendor/qcam(/.*)?                     u:object_r:vendor_camera_data_file:s0
+
 # DT2W
 /sys/android_touch(/.*)?                    u:object_r:sysfs_dt2w:s0
 
