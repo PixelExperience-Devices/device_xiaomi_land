@@ -188,6 +188,7 @@ ro.telephony.call_ring.multiple=false \
 ro.telephony.default_network=20 \
 service.qti.ims.enabled=1 \
 telephony.lteOnCdmaDevice=1
+persist.radio.aosp_usr_pref_sel=true
 
 # Security patch level
 +PRODUCT_PROPERTY_OVERRIDES += \

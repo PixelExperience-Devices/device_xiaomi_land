@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
     Copyright 2016 The CyanogenMod Project
-
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
     You may obtain a copy of the License at
@@ -72,7 +71,19 @@
          The user is forbidden from setting the brightness below this level. -->
     <integer name="config_screenBrightnessSettingMinimum">1</integer>
 
-    <integer name="config_buttonBrightnessSettingDefault">0</integer>
+	<!-- Hardware keys present on the device, stored as a bit field.
+          This integer should equal the sum of the corresponding value for each
+          of the following keys present:
+              1 - Home
+              2 - Back
+              4 - Menu
+              8 - Assistant (search)
+             16 - App switch
+             32 - Camera
+             64 - Volume rocker
+          For example, a device with Home, Back and Menu keys would set this
+          config to 7. -->
+    <integer name="config_deviceHardwareKeys">83</integer>
 
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveNotificationLed">true</bool>
