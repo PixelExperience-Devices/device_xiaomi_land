@@ -134,11 +134,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sys.fw.dex2oat_thread_count=8 \
     ro.vendor.qti.am.reschedule_service=true \
-    ro.vendor.qti.core_ctl_min_cpu=2 \
-    ro.vendor.qti.core_ctl_max_cpu=4 \
     ro.vendor.at_library=libqti-at.so \
     ro.vendor.extension_library=libqti-perfd-client.so \
-    ro.vendor.gt_library=libqti-gt.so \
     vendor.perf.gestureflingboost.enable=true
 
 # Perf configuration
