@@ -137,7 +137,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.qti.core_ctl_max_cpu=4 \
     ro.vendor.at_library=libqti-at.so \
     ro.vendor.extension_library=libqti-perfd-client.so \
-    ro.vendor.gt_library=libqti-gt.so
+    ro.vendor.gt_library=libqti-gt.so \
+    vendor.perf.gestureflingboost.enable=true
 
 # Perf configuration
 PRODUCT_PROPERTY_OVERRIDES += \
