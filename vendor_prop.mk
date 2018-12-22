@@ -112,6 +112,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.vidc.disable.split.mode=1 \
     vendor.video.disable.ubwc=1
 
+# Memory optimizations
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.qti.sys.fw.bservice_enable=true \
+    ro.vendor.qti.am.reschedule_service=true
+
 # Netmgrd
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.use_data_netmgrd=true \
