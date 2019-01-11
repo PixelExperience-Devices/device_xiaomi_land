@@ -133,21 +133,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sys.fw.dex2oat_thread_count=8 \
-    ro.vendor.qti.am.reschedule_service=true \
-    ro.vendor.at_library=libqti-at.so \
-    ro.vendor.extension_library=libqti-perfd-client.so \
-    vendor.perf.gestureflingboost.enable=true
-
-# Perf configuration
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.qti.sys.fw.bservice_enable=true \
-    ro.vendor.qti.sys.fw.bservice_limit=5 \
-    ro.vendor.qti.sys.fw.bservice_age=5000 \
-    ro.vendor.qti.sys.fw.use_trim_settings=true \
-    ro.vendor.qti.sys.fw.empty_app_percent=50 \
-    ro.vendor.qti.sys.fw.trim_empty_percent=100 \
-    ro.vendor.qti.sys.fw.trim_cache_percent=100 \
-    ro.vendor.qti.sys.fw.trim_enable_memory=2147483648
+    ro.vendor.extension_library=libqti-perfd-client.so
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
