@@ -313,6 +313,10 @@ PRODUCT_PACKAGES += \
     ethertypes \
     libebtc
 
+# Xiaomi Parts
+PRODUCT_PACKAGES += \
+    XiaomiParts
+
 # QMI
 PRODUCT_PACKAGES += \
     libjson
