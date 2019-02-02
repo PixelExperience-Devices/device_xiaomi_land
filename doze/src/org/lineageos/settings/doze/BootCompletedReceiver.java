@@ -35,7 +35,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
             if (DEBUG) Log.d(TAG, "Starting service");
             Utils.startService(context);
         }
-        DiracUtils.initialize();
+        DiracUtils.initialize(context);
     }
 
 }
