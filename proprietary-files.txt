@@ -1,9 +1,11 @@
-# Audio dirac - from stock - MIUI V9.5.8.0.MALMIFD
-lib/soundfx/libdirac.so
-lib/libDiracAPI_SHARED.so
-vendor/etc/diracmobile.config
+# Audio
 vendor/lib/libhwdaphal.so
 vendor/lib64/libhwdaphal.so
+
+# Audio Dirac
+vendor/etc/diracmobile.config
+vendor/lib/soundfx/libdirac.so
+vendor/lib/libDiracAPI_SHARED.so
 
 # Audio ACDB - from stock - MIUI V9.5.8.0.MALMIFD
 etc/acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_Bluetooth_cal.acdb:vendor/etc/acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_Bluetooth_cal.acdb
