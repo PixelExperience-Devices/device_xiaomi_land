@@ -34,3 +34,6 @@
 /sys/devices/soc/leds-qpnp-[0-9]+/leds(/.*)?				    u:object_r:sysfs_leds:s0
 /sys/devices/soc/[a-z0-9]+\.sdhci/leds(/.*)?                    u:object_r:sysfs_leds:s0
 /sys/devices/soc/soc:gpio-leds/leds(/.*)?                       u:object_r:sysfs_leds:s0
+
+#Live Display
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.0-service\.xiaomi                 u:object_r:hal_lineage_livedisplay_default_exec:s0
