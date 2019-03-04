@@ -649,4 +649,7 @@
 
     <!-- Whether to cleanup fingerprints upon connection to the daemon and when user switches -->
     <bool name="config_cleanupUnusedFingerprints">false</bool>
+
+    <!-- Default values for LiveDisplay -->
+    <bool name="config_defaultColorEnhancement">false</bool>
 </resources>
