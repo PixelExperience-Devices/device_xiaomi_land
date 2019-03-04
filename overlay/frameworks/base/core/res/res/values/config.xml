@@ -573,4 +573,7 @@
     <!-- Whether device ignores the RSSNR signal implementation -->
     <bool name="config_ignoreRssnrSignalLevel">true</bool>
 
+    <!-- Default values for LiveDisplay -->
+    <bool name="config_defaultColorEnhancement">false</bool>
+
 </resources>
