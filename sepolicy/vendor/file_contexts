@@ -1,6 +1,3 @@
-# Block devices
-/dev/block/bootdevice/by-name/persist		u:object_r:persist_block_device:s0
-
 # DT2W
 /sys/android_touch(/.*)?                    u:object_r:sysfs_dt2w:s0
 
