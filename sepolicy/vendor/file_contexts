@@ -4,7 +4,7 @@
 # FPC Fingerprint
 /data/fpc(/.*)?                             u:object_r:fpc_data_file:s0
 /dev/socket/fpce                            u:object_r:fpc_socket:s0
-/sys/devices/soc/soc:fpc1020(/.*)?          u:object_r:fpc_sysfs:s0
+/sys/devices(/platform)?/soc/soc:fpc1020(/.*)?          u:object_r:fpc_sysfs:s0
 
 # Goodix Fingerprint
 /data/goodix(/.*)?                          u:object_r:gx_fpd_data_file:s0
@@ -23,10 +23,10 @@
 /firmware(/.*)?                             u:object_r:firmware_file:s0
 
 # Lights / IR Blaster
-/sys/devices/soc/[a-z0-9]+\.sdhci/leds(/.*)?                                u:object_r:sysfs_leds:s0
-/sys/devices/soc/[a-z0-9]+\.i2c/i2c-[0-9]+/[0-9]+-[a-z0-9]+/leds(/.*)?      u:object_r:sysfs_leds:s0
-/sys/devices/soc/leds-qpnp-[0-9]+/leds(/.*)?                                u:object_r:sysfs_leds:s0
-/sys/devices/soc/soc:gpio-leds/leds(/.*)?                                   u:object_r:sysfs_leds:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+\.sdhci/leds(/.*)?                                u:object_r:sysfs_leds:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+\.i2c/i2c-[0-9]+/[0-9]+-[a-z0-9]+/leds(/.*)?      u:object_r:sysfs_leds:s0
+/sys/devices(/platform)?/soc/leds-qpnp-[0-9]+/leds(/.*)?                                u:object_r:sysfs_leds:s0
+/sys/devices(/platform)?/soc/soc:gpio-leds/leds(/.*)?                                   u:object_r:sysfs_leds:s0
 
 # VirtualKeys
 /sys/board_properties/virtualkeys.*         u:object_r:sysfs_virtualkeys:s0
