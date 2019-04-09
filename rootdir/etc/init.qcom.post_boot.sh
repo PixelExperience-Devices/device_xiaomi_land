@@ -115,8 +115,8 @@ function sched_dcvs_hmp(){
 
 function configure_zram_parameters() {
     if [ -f /sys/block/zram0/disksize ]; then
-        # Set Zram disk size to 512MB
-        echo 536870912 > /sys/block/zram0/disksize
+        # Set Zram disk size to 1GB
+        echo 1073741824 > /sys/block/zram0/disksize
         mkswap /dev/block/zram0
         swapon /dev/block/zram0 -p 32758
     fi
