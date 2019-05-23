@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015,2018, The Linux Foundation. All rights reserved.
+ * Copyright (c) 2015,2018 The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -35,11 +35,12 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <dlfcn.h>
-#include <pthread.h>
 #include <stdlib.h>
+#include <unistd.h>
+#include <pthread.h>
 
 #define LOG_TAG "QTI PowerHAL"
-#include <log/log.h>
+#include <utils/Log.h>
 #include <hardware/hardware.h>
 #include <hardware/power.h>
 
@@ -57,6 +58,8 @@ static int video_encode_hint_sent;
 pthread_mutex_t camera_hint_mutex = PTHREAD_MUTEX_INITIALIZER;
 static int camera_hint_ref_count;
 static void process_video_encode_hint(void *metadata);
+static int display_fd;
+#define SYS_DISPLAY_PWR "/sys/kernel/hbtp/display_pwr"
 
 int  power_hint_override(struct power_module *module, power_hint_t hint,
         void *data)
@@ -80,6 +83,12 @@ int  set_interactive_override(struct power_module *module, int on)
     char tmp_str[NODE_MAX];
     struct video_encode_metadata_t video_encode_metadata;
     int rc = 0;
+
+    static const char *display_on = "1";
+    static const char *display_off = "0";
+    char err_buf[80];
+    static int init_interactive_hint = 0;
+    static int set_i_count = 0;
 
     ALOGI("Got set_interactive hint");
 
@@ -119,14 +128,48 @@ int  set_interactive_override(struct power_module *module, int on)
           }
    }
     saved_interactive_mode = !!on;
+
+    set_i_count ++;
+    ALOGI("Got set_interactive hint on= %d, count= %d\n", on, set_i_count);
+
+    if (init_interactive_hint == 0)
+    {
+        //First time the display is turned off
+        display_fd = TEMP_FAILURE_RETRY(open(SYS_DISPLAY_PWR, O_RDWR));
+        if (display_fd < 0) {
+            strerror_r(errno,err_buf,sizeof(err_buf));
+            ALOGE("Error opening %s: %s\n", SYS_DISPLAY_PWR, err_buf);
+            return HINT_HANDLED;
+        }
+        else
+            init_interactive_hint = 1;
+    }
+    else
+        if (!on ) {
+            /* Display off. */
+            rc = TEMP_FAILURE_RETRY(write(display_fd, display_off, strlen(display_off)));
+            if (rc < 0) {
+                strerror_r(errno,err_buf,sizeof(err_buf));
+                ALOGE("Error writing %s to  %s: %s\n", display_off, SYS_DISPLAY_PWR, err_buf);
+            }
+        }
+        else {
+            /* Display on */
+            rc = TEMP_FAILURE_RETRY(write(display_fd, display_on, strlen(display_on)));
+            if (rc < 0) {
+                strerror_r(errno,err_buf,sizeof(err_buf));
+                ALOGE("Error writing %s to  %s: %s\n", display_on, SYS_DISPLAY_PWR, err_buf);
+            }
+        }
+
     return HINT_HANDLED;
 }
 
 /* Video Encode Hint */
 static void process_video_encode_hint(void *metadata)
 {
-    char governor[80]={0};
-    int resource_values[20]={0};
+    char governor[80] = {0};
+    int resource_values[20] = {0};
     int num_resources = 0;
     struct video_encode_metadata_t video_encode_metadata;
 
@@ -166,18 +209,18 @@ static void process_video_encode_hint(void *metadata)
         if((strncmp(governor, SCHEDUTIL_GOVERNOR,
             strlen(SCHEDUTIL_GOVERNOR)) == 0) &&
             (strlen(governor) == strlen(SCHEDUTIL_GOVERNOR))) {
-            /* sample_ms = 10mS */
-            int res[] = {0x41820000, 0xa,
-                        };
-            memcpy(resource_values, res, MIN_VAL(sizeof(resource_values), sizeof(res)));
-            num_resources = sizeof(res)/sizeof(res[0]);
-            pthread_mutex_lock(&camera_hint_mutex);
-            camera_hint_ref_count++;
-            if (camera_hint_ref_count == 1) {
-                if (!video_encode_hint_sent) {
-                    perform_hint_action(video_encode_metadata.hint_id,
-                    resource_values, num_resources);
-                    video_encode_hint_sent = 1;
+             /* sample_ms = 10mS */
+             int res[] = {0x41820000, 0xa,
+                         };
+             memcpy(resource_values, res, MIN_VAL(sizeof(resource_values), sizeof(res)));
+             num_resources = sizeof(res)/sizeof(res[0]);
+             pthread_mutex_lock(&camera_hint_mutex);
+             camera_hint_ref_count++;
+             if (camera_hint_ref_count == 1) {
+                 if (!video_encode_hint_sent) {
+                     perform_hint_action(video_encode_metadata.hint_id,
+                     resource_values, num_resources);
+                     video_encode_hint_sent = 1;
                 }
             }
             pthread_mutex_unlock(&camera_hint_mutex);
@@ -229,3 +272,4 @@ static void process_video_encode_hint(void *metadata)
     }
     return;
 }
+

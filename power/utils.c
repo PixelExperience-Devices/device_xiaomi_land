@@ -40,14 +40,14 @@
 #include "hint-data.h"
 #include "power-common.h"
 
-#define LOG_TAG "QCOM PowerHAL"
-#include <log/log.h>
+#define LOG_TAG "QTI PowerHAL"
+#include <utils/Log.h>
 
 char scaling_gov_path[4][80] ={
-    "/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor",
-    "/sys/devices/system/cpu/cpu1/cpufreq/scaling_governor",
-    "/sys/devices/system/cpu/cpu2/cpufreq/scaling_governor",
-    "/sys/devices/system/cpu/cpu3/cpufreq/scaling_governor"
+    "sys/devices/system/cpu/cpu0/cpufreq/scaling_governor",
+    "sys/devices/system/cpu/cpu1/cpufreq/scaling_governor",
+    "sys/devices/system/cpu/cpu2/cpufreq/scaling_governor",
+    "sys/devices/system/cpu/cpu3/cpufreq/scaling_governor"
 };
 
 #define PERF_HAL_PATH "libqti-perfd-client.so"
@@ -255,7 +255,7 @@ int perf_hint_enable(int hint_id , int duration)
         if (perf_hint) {
             lock_handle = perf_hint(hint_id, NULL, duration, -1);
             if (lock_handle == -1)
-                ALOGE("Failed to acquire lock.");
+                ALOGE("Failed to acquire lock for hint_id: %X.", hint_id);
         }
     }
     return lock_handle;
