@@ -85,7 +85,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Fingerprint
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.qfp=false
+    persist.qfp=false \
+    ro.fingerprint.cleanup.unused=false
 
 # FM
 PRODUCT_PROPERTY_OVERRIDES += \
