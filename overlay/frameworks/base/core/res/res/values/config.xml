@@ -579,4 +579,7 @@
     <!-- Default values for LiveDisplay -->
     <bool name="config_defaultColorEnhancement">false</bool>
 
+   <!-- Whether device supports double tap to wake -->
+    <bool name="config_supportDoubleTapWake">true</bool>
+
 </resources>

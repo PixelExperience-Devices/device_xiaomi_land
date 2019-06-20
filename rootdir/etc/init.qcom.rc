@@ -239,6 +239,10 @@ on boot
     chown root system /sys/class/leds/infrared/transmit
     chown root system /sys/class/leds/infrared/brightness
 
+    # Double Tap To Wake
+    chown system system /sys/android_touch/doubletap2wake
+    chmod 660 /sys/android_touch/doubletap2wake
+
     # Subsystem restart
     write /sys/bus/msm_subsys/devices/subsys0/restart_level related
     write /sys/bus/msm_subsys/devices/subsys1/restart_level related
