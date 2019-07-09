@@ -229,6 +229,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/qti_libpermissions.xml:system/etc/permissions/qti_libpermissions.xml
 
+# HW crypto
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.cryptfshw@1.0-service-ioctl-qti
+
 # IMS
 PRODUCT_PACKAGES += \
     com.android.ims.rcsmanager
