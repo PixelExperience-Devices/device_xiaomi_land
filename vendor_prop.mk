@@ -102,6 +102,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
+    debug.stagefright.omx_default_rank.sw-audio=1 \
+    debug.stagefright.omx_default_rank=0 \
     media.msm8956hw=0 \
     mm.enable.smoothstreaming=true \
     mmp.enable.3g2=true \
