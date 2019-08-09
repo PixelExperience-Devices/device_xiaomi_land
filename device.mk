@@ -344,6 +344,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.1-service.custom
 
+#Properties
+-include $(LOCAL_PATH)/vendor_prop.mk
+
 # RCS
 PRODUCT_PACKAGES += \
     rcs_service_aidl \
