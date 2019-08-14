@@ -4446,17 +4446,9 @@ int32_t QCameraParameters::setWaveletDenoise(const QCameraParameters& params)
  *==========================================================================*/
 int32_t QCameraParameters::setTemporalDenoise(const QCameraParameters& params)
 {
-    if ((m_pCapability->qcom_supported_feature_mask & CAM_QCOM_FEATURE_CPP_TNR) == 0) {
-        LOGH("TNR is not supported");
-        return NO_ERROR;
-    }
-
 #if 1
-    int32_t enable = property_get_int32("debug.camera.tnr_enable", 0);
-    if (!enable) {
-        LOGH("TNR is not supported");
-        return NO_ERROR;
-    }
+    LOGD("TNR is not supported.");
+    return NO_ERROR;
 #endif
 
     const char *str = params.get(KEY_QC_TNR_MODE);
@@ -7926,11 +7918,8 @@ int32_t QCameraParameters::setCDSMode(const QCameraParameters& params)
     int32_t rc = NO_ERROR;
 
 #if 1
-    int32_t enable = property_get_int32("debug.camera.cds_enable", 0);
-    if (!enable) {
-        LOGH("CDS is not supported. Not applying user params for this.");
-        return NO_ERROR;
-    }
+    LOGD("CDS is not supported. Not applying user params for this.");
+    return rc;
 #endif
 
     if (m_bRecordingHint_new == true) {
@@ -13932,11 +13921,8 @@ int32_t QCameraParameters::setCDSMode(int32_t cds_mode, bool initCommit)
     int32_t rc = NO_ERROR;
 
 #if 1
-    int32_t enable = property_get_int32("debug.camera.cds_enable", 0);
-    if (!enable) {
-        LOGH("CDS is not supported");
-        return NO_ERROR;
-    }
+    LOGD("CDS is not supported.");
+    return rc;
 #endif
 
     if (ADD_SET_PARAM_ENTRY_TO_BATCH(m_pParamBuf, CAM_INTF_PARM_CDS_MODE, cds_mode)) {

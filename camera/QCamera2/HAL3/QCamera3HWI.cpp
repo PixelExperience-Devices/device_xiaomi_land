@@ -3367,12 +3367,7 @@ int QCamera3HardwareInterface::processCaptureRequest(
         int32_t tintless_value = 1;
         ADD_SET_PARAM_ENTRY_TO_BATCH(mParameters,
                 CAM_INTF_PARM_TINTLESS, tintless_value);
-
-#if 1
-        int32_t enable = property_get_int32("debug.camera.cds_enable", 0);
-        if (enable) {
-        LOGH("CDS is not supported");
-#endif
+#if 0
         //Disable CDS for HFR mode or if DIS/EIS is on.
         //CDS is a session parameter in the backend/ISP, so need to be set/reset
         //after every configure_stream
@@ -3383,8 +3378,6 @@ int QCamera3HardwareInterface::processCaptureRequest(
                     CAM_INTF_PARM_CDS_MODE, cds))
                 LOGE("Failed to disable CDS for HFR mode");
 
-        }
-#if 1
         }
 #endif
 
@@ -8899,10 +8892,7 @@ int QCamera3HardwareInterface::translateToHalMetadata
         }
     }
 
-#if 1
-    int32_t cds_enable = property_get_int32("debug.camera.cds_enable", 0);
-    if (cds_enable) {
-#endif
+#if 0
     // CDS for non-HFR non-video mode
     if ((mOpMode != CAMERA3_STREAM_CONFIGURATION_CONSTRAINED_HIGH_SPEED_MODE) &&
             !(m_bIsVideo) && frame_settings.exists(QCAMERA3_CDS_MODE)) {
@@ -8916,14 +8906,7 @@ int QCamera3HardwareInterface::translateToHalMetadata
             }
         }
     }
-#if 1
-    }
-#endif
 
-#if 1
-    int32_t tnr_enable = property_get_int32("debug.camera.tnr_enable", 0);
-    if (tnr_enable) {
-#endif
     // TNR
     if (frame_settings.exists(QCAMERA3_TEMPORAL_DENOISE_ENABLE) &&
         frame_settings.exists(QCAMERA3_TEMPORAL_DENOISE_PROCESS_TYPE)) {
@@ -8937,8 +8920,6 @@ int QCamera3HardwareInterface::translateToHalMetadata
         if (ADD_SET_PARAM_ENTRY_TO_BATCH(mParameters, CAM_INTF_PARM_TEMPORAL_DENOISE, tnr)) {
             rc = BAD_VALUE;
         }
-    }
-#if 1
     }
 #endif
 
