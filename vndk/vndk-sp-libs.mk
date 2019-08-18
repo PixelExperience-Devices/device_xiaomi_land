@@ -30,4 +30,4 @@ VNDK_SP_LIBRARIES := \
     libunwindstack \
     libutils \
     libutilscallstack \
-    libdexfile \
+    libdexfile
