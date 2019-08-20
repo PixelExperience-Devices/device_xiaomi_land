@@ -1,0 +1,1 @@
+allow wcnss_service serialno_prop:file { open read };

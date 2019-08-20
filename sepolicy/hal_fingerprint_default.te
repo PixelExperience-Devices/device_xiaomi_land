@@ -15,6 +15,13 @@ allow hal_fingerprint_default fingerprint_service:service_manager find;
 allow hal_fingerprint_default gx_fpd_service:service_manager find;
 allow hal_fingerprint_default init:unix_stream_socket connectto;
 
+allow hal_fingerprint_default mnt_user_file:dir search;
+allow hal_fingerprint_default mnt_user_file:lnk_file read;
+allow hal_fingerprint_default sdcardfs:dir search;
+allow hal_fingerprint_default sdcardfs:file getattr;
+allow hal_fingerprint_default storage_file:dir search;
+allow hal_fingerprint_default storage_file:lnk_file read;
+
 # TEMP
 allow hal_fingerprint_default sysfs:file rw_file_perms;
 
