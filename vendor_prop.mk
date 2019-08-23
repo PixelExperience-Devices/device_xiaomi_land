@@ -46,10 +46,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.camera.hal1.packagelist=com.skype.raider,com.google.android.talk \
-    persist.vendor.camera.display.umax=2560x1440 \
+    persist.vendor.camera.display.umax=1920x1080 \
     persist.vendor.camera.display.lmax=1280x720 \
-    persist.camera.is_type=2 \
-    persist.camera.HAL3.enabled=1 \
+    persist.camera.is_type=1 \
     persist.ts.postmakeup=true \
     persist.ts.rtmakeup=true \
     persist.vendor.qti.telephony.vt_cam_interface=1
@@ -57,6 +56,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # CNE/DPM
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.cne.feature=1
+
+# Dalvik
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.heapstartsize=16m \
+    dalvik.vm.heapgrowthlimit=192m \
+    dalvik.vm.heapsize=384m \
+    dalvik.vm.heaptargetutilization=0.75 \
+    dalvik.vm.heapminfree=4m \
+    dalvik.vm.heapmaxfree=8m
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -113,11 +121,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.vidc.disable.split.mode=1 \
     vendor.video.disable.ubwc=1
 
-# Memory optimizations
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.qti.sys.fw.bservice_enable=true \
-    ro.vendor.qti.am.reschedule_service=true
-
 # Netmgrd
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.use_data_netmgrd=true \
@@ -144,6 +147,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.at_library=libqti-at.so \
     ro.vendor.extension_library=libqti-perfd-client.so \
     ro.vendor.gt_library=libqti-gt.so \
+    ro.sys.fw.dex2oat_thread_count=4 \
     vendor.perf.gestureflingboost.enable=true
 
 # Perf configuration
