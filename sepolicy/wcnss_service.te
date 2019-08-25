@@ -1,1 +1,1 @@
-allow wcnss_service serialno_prop:file { open read };
+allow wcnss_service serialno_prop:file r_file_perms;

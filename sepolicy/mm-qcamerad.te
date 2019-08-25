@@ -8,7 +8,7 @@ allow mm-qcamerad sensorservice_service:service_manager find;
 allow mm-qcamerad sysfs:file r_file_perms;
 allow mm-qcamerad sysfs_graphics:file r_file_perms;
 
-allow mm-qcamerad binder_device:chr_file { open read write };
+allow mm-qcamerad binder_device:chr_file rw_file_perms;
 
 binder_call(mm-qcamerad, servicemanager)
 binder_use(mm-qcamerad)
