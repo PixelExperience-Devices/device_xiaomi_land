@@ -449,16 +449,6 @@
         <fqname>@1.0::IDisplayPostproc/default</fqname>
     </hal>
     <hal format="hidl">
-        <name>vendor.lineage.livedisplay</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IColor</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::IColor/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.qti.data.factory</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
