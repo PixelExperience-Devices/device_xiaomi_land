@@ -61,12 +61,6 @@ static void property_override(char const prop[], char const value[]) {
         __system_property_add(prop, strlen(prop), value, strlen(value));
 }
 
-static bool is3GBram() {
-    struct sysinfo sys;
-    sysinfo(&sys);
-    return sys.totalram > 2048ull * 1024 * 1024;
-}
-
 static void import_kernel_cmdline_land(bool in_qemu,
                            const std::function<void(const std::string&, const std::string&, bool)>& fn) {
     std::string cmdline;
@@ -94,24 +88,6 @@ static void parse_cmdline_boardid(const std::string& key,
     }
 }
 
-static void set_ramconfig() {
-    if (is3GBram()) {
-        property_set("dalvik.vm.heapstartsize", "8m");
-        property_set("dalvik.vm.heapgrowthlimit", "288m");
-        property_set("dalvik.vm.heapsize", "768m");
-        property_set("dalvik.vm.heaptargetutilization", "0.75");
-        property_set("dalvik.vm.heapminfree", "512k");
-        property_set("dalvik.vm.heapmaxfree", "8m");
-    } else {
-        property_set("dalvik.vm.heapstartsize", "8m");
-        property_set("dalvik.vm.heapgrowthlimit", "192m");
-        property_set("dalvik.vm.heapsize", "512m");
-        property_set("dalvik.vm.heaptargetutilization", "0.75");
-        property_set("dalvik.vm.heapminfree", "2m");
-        property_set("dalvik.vm.heapmaxfree", "8m");
-    }
-}
-
 static void variant_properties() {
     std::string product = GetProperty("ro.product.name", "");
     if (product.find("land") == std::string::npos)
@@ -131,6 +107,5 @@ static void variant_properties() {
 }
 
 void vendor_load_properties() {
-    set_ramconfig();
     variant_properties();
 }
