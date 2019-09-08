@@ -243,8 +243,7 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.sh \
     init.qcom.sh \
     init.target.rc \
-    fstab.qcom \
-    init.device.rc
+    fstab.qcom
 
 # Keylayout
 PRODUCT_COPY_FILES += \
