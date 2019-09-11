@@ -42,7 +42,6 @@
 #include <sys/_system_properties.h>
 #include <sys/sysinfo.h>
 
-#include "log.h"
 #include "property_service.h"
 #include "vendor_init.h"
 
