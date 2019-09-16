@@ -109,7 +109,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.mm.enable.qcom_parser=1048575 \
     vendor.vidc.enc.narrow.searchrange=1 \
     vendor.vidc.disable.split.mode=1 \
-    vendor.video.disable.ubwc=1
+    vendor.video.disable.ubwc=1 \
+    media.settings.xml=/vendor/etc/media_profiles_V1_0.xml
 
 # Netmgrd
 PRODUCT_PROPERTY_OVERRIDES += \
