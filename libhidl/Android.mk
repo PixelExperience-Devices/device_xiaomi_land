@@ -15,7 +15,7 @@
 
 include $(CLEAR_VARS)
 
-LOCAL_SHARED_LIBRARIES := libhidltransport
+LOCAL_SHARED_LIBRARIES := libhidlbase
 LOCAL_MODULE := android.hidl.base@1.0
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES

@@ -28,7 +28,6 @@ LOCAL_SHARED_LIBRARIES := \
     libdl \
     libxml2 \
     libhidlbase \
-    libhidltransport \
     libhardware \
     libutils
 
