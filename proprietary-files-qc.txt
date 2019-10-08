@@ -451,8 +451,8 @@ vendor/lib/libadpcmdec.so
 vendor/lib/libsmwrapper.so
 vendor/lib64/hw/sound_trigger.primary.msm8937.so
 
-# Media - from TA-1024
-lib/extractors/libmmparser.so
+# Media - from LA.UM.8.6.r1-01900-89xx.0
+lib/extractors/libmmparserextractor.so
 lib/libFileMux.so
 lib/libmmosal.so
 lib/libmmparser_lite.so
@@ -476,13 +476,16 @@ vendor/lib/libOmxApeDec.so
 vendor/lib/libOmxApeDecSw.so
 vendor/lib/libOmxDsdDec.so
 vendor/lib/libOmxEvrcDec.so
+vendor/lib/libOmxG711Dec.so
+vendor/lib/libOmxSwVdec.so
+vendor/lib/libOmxSwVencMpeg4.so
 vendor/lib/libOmxQcelp13Dec.so
 vendor/lib/libOmxVideoDSMode.so
-vendor/lib/libOmxVpp.so
 vendor/lib/libOmxWmaDec.so
+vendor/lib/libMpeg4SwEncoder.so
 vendor/lib/libmmosal_proprietary.so
 vendor/lib/libmm-color-convertor.so
-vendor/lib/libvpplibrary.so
+vendor/lib/libswvdec.so
 vendor/lib/libvqzip.so
 vendor/lib/vendor.qti.hardware.vpp@1.1.so
 vendor/lib64/libAlacSwDec.so
@@ -496,23 +499,17 @@ vendor/lib64/libOmxAmrwbplusDec.so
 vendor/lib64/libOmxApeDec.so
 vendor/lib64/libOmxApeDecSw.so
 vendor/lib64/libOmxEvrcDec.so
+vendor/lib64/libOmxSwVdec.so
+vendor/lib64/libOmxSwVencMpeg4.so
 vendor/lib64/libOmxQcelp13Dec.so
 vendor/lib64/libOmxVpp.so
 vendor/lib64/libOmxWmaDec.so
+vendor/lib64/libMpeg4SwEncoder.so
 vendor/lib64/libmmosal_proprietary.so
 vendor/lib64/libmm-color-convertor.so
+vendor/lib64/libswvdec.so
 vendor/lib64/libvpplibrary.so
 vendor/lib64/vendor.qti.hardware.vpp@1.1.so
-
-# Media - from TA-1024
-vendor/lib/libOmxSwVdec.so
-vendor/lib/libOmxSwVencMpeg4.so
-vendor/lib/libMpeg4SwEncoder.so
-vendor/lib/libswvdec.so
-vendor/lib64/libOmxSwVdec.so
-vendor/lib64/libOmxSwVencMpeg4.so
-vendor/lib64/libMpeg4SwEncoder.so
-vendor/lib64/libswvdec.so
 
 # Perf - from TA-1024
 lib/libqti-at.so
