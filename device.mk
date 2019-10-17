@@ -443,6 +443,9 @@ PRODUCT_PACKAGES += \
     libaacwrapper \
     libnl
 
+PRODUCT_BOOT_JARS += \
+    WfdCommon
+
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 # Installs gsi keys into ramdisk, to boot a GSI with verified boot.
