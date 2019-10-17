@@ -1,11 +1,12 @@
 on enable-low-power
     start qcom-post-boot
 
+    # Enable power efficient workqueue
+    write /sys/module/workqueue/parameters/power_efficient Y
+
+    # Set Memory parameters
     write /proc/sys/vm/swappiness 100
     swapon_all /vendor/etc/fstab.qcom
-
-    # Work against lineage-governor.rc
-    chown root root /dev/cpuctl/cpu.notify_on_migrate
 
 on charger
     # Offline all cores other than CPU0
@@ -31,4 +32,4 @@ on property:init.svc.recovery=running
 
 on property:sys.boot_completed=1
     trigger enable-low-power
-    setprop sys.io.scheduler cfq
+    setprop sys.io.scheduler bfq
