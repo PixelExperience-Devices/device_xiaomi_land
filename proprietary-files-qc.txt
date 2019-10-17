@@ -180,26 +180,26 @@ vendor/lib64/vendor.qti.latency@2.0.so
 # Charger - from TA-1024
 vendor/bin/hvdcp_opti
 
-# DPM - from Panther
-bin/dpmd
-etc/dpm/dpm.conf
-etc/init/dpmd.rc
-etc/permissions/com.qti.dpmframework.xml
-etc/permissions/dpmapi.xml
-framework/com.qti.dpmframework.jar
-framework/dpmapi.jar
-framework/tcmclient.jar
+# DPM - from raphael-user 10 QKQ1.190716.003 V10.4.6.0.QFKCNXM release-keys
+product/bin/dpmd
+product/etc/dpm/dpm.conf
+product/etc/init/dpmd.rc
+product/etc/permissions/com.qti.dpmframework.xml
+product/etc/permissions/dpmapi.xml
+product/framework/com.qti.dpmframework.jar
+product/framework/dpmapi.jar
+product/framework/tcmclient.jar
 -priv-app/dpmserviceapp/dpmserviceapp.apk
-lib/com.qualcomm.qti.dpm.api@1.0.so
+product/lib/com.qualcomm.qti.dpm.api@1.0.so
 lib/libdpmctmgr.so
 lib/libdpmfdmgr.so
 lib/libdpmframework.so
 lib/libdpmtcm.so
 lib64/com.qualcomm.qti.dpm.api@1.0.so
-lib64/libdpmctmgr.so
-lib64/libdpmfdmgr.so
-lib64/libdpmframework.so
-lib64/libdpmtcm.so
+product/lib64/libdpmctmgr.so
+product/lib64/libdpmfdmgr.so
+product/lib64/libdpmframework.so
+product/lib64/libdpmtcm.so
 vendor/bin/dpmQmiMgr
 vendor/lib/com.qualcomm.qti.dpm.api@1.0.so
 vendor/lib/libdpmqmihal.so
