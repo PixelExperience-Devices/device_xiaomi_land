@@ -206,6 +206,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libqti_vndfwk_detect
 
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.vendor.qti.va_aosp.support=1
+
 # Gatekeeper HAL
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
