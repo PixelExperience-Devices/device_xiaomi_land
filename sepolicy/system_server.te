@@ -1,5 +1,4 @@
 allow system_server radio_prop:property_service set;
-allow system_server wcnss_filter:unix_stream_socket connectto;
 allow system_server vendor_file:file r_file_perms;
 allow system_server unlabeled:file unlink;
 allow system_server sysfs:file r_file_perms;
