@@ -1,10 +1,18 @@
 [
   {
     "repository": "kernel_xiaomi_msm8937",
-    "target_path": "kernel/xiaomi/msm8937"
+    "target_path": "kernel/xiaomi/msm8937",
+    "branch": "pie"
   },
   {
     "repository": "vendor_xiaomi_land",
-    "target_path": "vendor/xiaomi"
-  }
+    "target_path": "vendor/xiaomi",
+    "branch": "pie"
+  },
+  {
+      "remote":"github",
+      "repository":"LineageOS/android_packages_resources_devicesettings",
+      "target_path":"packages/resources/devicesettings",
+      "branch":"lineage-16.0"
+   }
 ]
