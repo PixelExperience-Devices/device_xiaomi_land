@@ -132,7 +132,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0 \
     vendor.qti.hardware.camera.device@1.0_vendor \
     camera.msm8937 \
-    Snap
+    GCam
 
 # Configstore
 PRODUCT_PACKAGES += \
