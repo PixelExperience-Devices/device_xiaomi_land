@@ -1,6 +1,7 @@
+typeattribute qti_init_shell data_between_core_and_vendor_violators;
+
 allow qti_init_shell shell_exec:file { r_file_perms entrypoint };
 allow qti_init_shell toolbox_exec:file { r_file_perms execute_no_trans execute };
-allow qti_init_shell sysfs:file { rw_file_perms };
-allow qti_init_shell self:capability { dac_override };
+allow qti_init_shell sysfs:file write;
 
 set_prop(qti_init_shell, ctl_default_prop)

@@ -1,6 +1,8 @@
 type gx_fpd, domain;
 type gx_fpd_exec, exec_type, vendor_file_type, file_type;
 
+typeattribute gx_fpd data_between_core_and_vendor_violators;
+
 # gx_fpd
 init_daemon_domain(gx_fpd)
 binder_call(gx_fpd, hal_fingerprint_default)
@@ -10,11 +12,11 @@ r_dir_file(gx_fpd, firmware_file)
 # add services
 allow gx_fpd gx_fpd_service:service_manager { add find };
 
-# allow storing goodix data
-# TODO: Remove? This may not be needed since tee handles goodix data
-allow gx_fpd system_data_file:dir create_dir_perms;
-allow gx_fpd { persist_drm_file gx_fpd_data_file }:dir create_dir_perms;
-allow gx_fpd { persist_drm_file gx_fpd_data_file }:file create_file_perms;
+# allow HAL module to read dir contents
+allow gx_fpd gx_fpd_data_file:file create_file_perms;
+
+# allow HAL module to read/write/unlink contents of this dir
+allow gx_fpd gx_fpd_data_file:dir rw_dir_perms;
 
 # Need to add auth tokens to KeyStore
 use_keystore(gx_fpd)
@@ -46,9 +48,7 @@ allowxperm gx_fpd self:{
 
 # Allow to create and use sockets
 allow gx_fpd self:socket create_socket_perms_no_ioctl;
-allow gx_fpd self:netlink_socket create_socket_perms_no_ioctl;
-allow gx_fpd self:netlink_generic_socket create_socket_perms_no_ioctl;
-allow gx_fpd self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+allow gx_fpd self:{ netlink_socket netlink_generic_socket } create_socket_perms_no_ioctl;
 
 # Allow read write sysfs
 allow gx_fpd sysfs:file rw_file_perms;
@@ -58,7 +58,3 @@ set_prop(gx_fpd, system_prop)
 
 # Ignore all logging requests
 dontaudit gx_fpd storage_file:dir search;
-
-allow gx_fpd binder_device:chr_file rw_file_perms;
-allow gx_fpd gx_fpd:capability { sys_resource } ;
-allow gx_fpd gx_fpd:capability { dac_override } ;
