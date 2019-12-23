@@ -676,4 +676,7 @@
     <!-- Whether to post reset runnable for all clients. Needed for some older
          vendor fingerprint HAL implementations. -->
     <bool name="config_fingerprintPostResetRunnableForAllClients">true</bool>
+
+    <!-- Button backlight -->
+    <integer name="config_buttonBrightnessSettingDefault">0</integer>
 </resources>
