@@ -68,7 +68,6 @@ on post-fs-data
     mkdir /persist/data/tz 0700 system system
     mkdir /data/vendor/hbtp 0750 system system
     mkdir /data/misc/dts 0770 media audio
-    mkdir /data/vendor/tloc 0700 system drmrpc
 
 
 #Create folder for mm-qcamera-daemon
@@ -114,11 +113,6 @@ service thermal-engine /system/vendor/bin/thermal-engine
    socket thermal-recv-client stream 0660 system system
    socket thermal-recv-passive-client stream 0666 system system
    socket thermal-send-rule stream 0660 system system
-   group root
-
-service time_daemon /system/vendor/bin/time_daemon
-   class late_start
-   user root
    group root
 
 on boot
@@ -172,6 +166,7 @@ on boot
     setprop vendor.usb.rmnet.func.name "rmnet_bam"
     setprop vendor.usb.rmnet.inst.name "rmnet_bam_dmux"
     setprop vendor.usb.dpl.inst.name "dpl_bam_dmux"
+    setprop vendor.usb.qdss.inst.name "qdss"
 
     # Wifi firmware reload path
     chown wifi wifi /sys/module/wlan/parameters/fwpath
@@ -246,7 +241,7 @@ on property:init.svc.zygote=restarting
     stop ppd
 
 on charger
-    setprop sys.usb.configfs 0
+    setprop sys.usb.configfs 1
     start vendor.hvdcp_opti
     start vendor.vm_bms
 
@@ -311,11 +306,6 @@ service mdtpd /system/vendor/bin/mdtpd
 on boot
     write /sys/devices/soc.0/78b8000.i2c/i2c-4/4-0020/input/input0/fw_name PR1702898-s3528t_00260005_00380008.img
     write /sys/devices/soc.0/78b8000.i2c/i2c-4/4-0020/input/input0/update_fw 1
-
-service vendor.tlocd /vendor/bin/tloc_daemon
-    class late_start
-    user system
-    group drmrpc gps net_raw
 
 on boot
     chown system system /sys/class/leds/red/blink
