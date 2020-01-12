@@ -24,7 +24,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
 $(call inherit-product, vendor/colt/common.mk)
 $(call inherit-product, packages/apps/ColtApps/common.mk)
 
-TARGET_BOOT_ANIMATION_RES := 740×1280
+TARGET_BOOT_ANIMATION_RES := 720x1280
 
 # Inherit from land device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
