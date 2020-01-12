@@ -20,11 +20,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
 
-# Inherit some common Colt stuff.
-$(call inherit-product, vendor/colt/config/common.mk)
+# Include some common Colt stuff.
+include vendor/colt/config/common.mk)
 $(call inherit-product, packages/apps/ColtApps/common.mk)
 
-TARGET_BOOT_ANIMATION_RES := 720x1280
+# boot animTion
+BOOTANIMATION := 720x1280
 
 # Inherit from land device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
