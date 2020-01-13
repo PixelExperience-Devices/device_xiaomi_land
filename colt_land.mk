@@ -23,7 +23,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
 # Include some common Colt stuff.
 include vendor/colt/config/common.mk)
 $(call inherit-product, vendor/colt/config/common_full_phone.mk)
-$(call inherit-product, packages/apps/ColtApps/common.mk)
+
 
 # boot animTion
 BOOTANIMATION := 720x1280
