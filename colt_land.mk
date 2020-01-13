@@ -26,7 +26,7 @@ $(call inherit-product, vendor/colt/config/common.mk)
 
 
 # boot animTion
-BOOTANIMATION := 720x1280
+TARGET_BOOT_ANIMATION_RES := 720x1280
 
 # Inherit from land device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
