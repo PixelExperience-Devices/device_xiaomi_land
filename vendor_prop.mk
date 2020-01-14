@@ -175,6 +175,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
     ro.telephony.call_ring.multiple=false \
     ro.telephony.default_network=20,20 \
+    ro.telephony.use_old_mnc_mcc_format=true \
     vendor.service.qti.ims.enabled=1 \
     telephony.lteOnCdmaDevice=1
 
