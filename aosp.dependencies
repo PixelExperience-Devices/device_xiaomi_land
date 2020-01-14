@@ -5,7 +5,7 @@
     "branch": "ten"
   },
   {
-    "repository": "vendor_xiaomi_land",
+    "repository": "vendor_xiaomi",
     "target_path": "vendor/xiaomi",
     "branch": "ten"
   },
