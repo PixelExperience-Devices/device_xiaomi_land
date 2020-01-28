@@ -18,8 +18,7 @@
 /sys/devices/soc/soc:gpio-leds/leds(/.*)?                                   u:object_r:sysfs_leds:s0
 
 # HIDL
-/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.0-service.custom                 u:object_r:hal_fingerprint_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service.custom                 u:object_r:hal_fingerprint_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service.land                 u:object_r:hal_fingerprint_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.1-service\.custom     u:object_r:hal_power_default_exec:s0
 
 # Legacy root dirs

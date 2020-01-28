@@ -14,11 +14,7 @@
  * limitations under the License.
  */
 
-#ifdef USE_FINGERPRINT_2_0
-#define LOG_TAG "android.biometrics.fingerprint@2.0-service.custom"
-#else
-#define LOG_TAG "android.biometrics.fingerprint@2.1-service.custom"
-#endif
+#define LOG_TAG "android.biometrics.fingerprint@2.1-service.land"
 
 #include <binder/ProcessState.h>
 
@@ -46,7 +42,7 @@ static constexpr char kGoodixFpDev[] = "/dev/goodix_fp";
 int main() {
     char vend[PROPERTY_VALUE_MAX];
     property_get("ro.hardware.fingerprint", vend, "none");
-    
+
     if (!strcmp(vend, "none")) {
     	ALOGE("ro.hardware.fingerprint not set! Killing " LOG_TAG " binder service!");
         return 1;
