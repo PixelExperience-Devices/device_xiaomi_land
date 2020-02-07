@@ -56,6 +56,7 @@ on post-fs
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
 
+    start vendor.qseecomd
     write /dev/ipa 1
 
 on post-fs-data
@@ -68,7 +69,6 @@ on post-fs-data
     mkdir /persist/data/tz 0700 system system
     mkdir /data/vendor/hbtp 0750 system system
     mkdir /data/misc/dts 0770 media audio
-    mkdir /data/vendor/tloc 0700 system drmrpc
 
 
 #Create folder for mm-qcamera-daemon
@@ -102,10 +102,30 @@ on property:persist.usb.chgdisabled=1
 on property:persist.usb.chgdisabled=0
     write /sys/class/power_supply/battery/charging_enabled 1
 
+service qrngd /system/bin/qrngd -f
+   class main
+   user root
+   group root
+
+service qrngp /system/bin/qrngp -f
+   class main
+   user root
+   group root
+   oneshot
+   disabled
+
+on property:sys.boot_completed=1
+   start qrngp
+
 service vendor.qseecomd /vendor/bin/qseecomd
    class core
    user root
    group root
+
+#service aostlmd /system/bin/aostlmd
+#   class late_start
+#   user system
+#   group system net_raw
 
 service thermal-engine /system/vendor/bin/thermal-engine
    class main
@@ -116,10 +136,10 @@ service thermal-engine /system/vendor/bin/thermal-engine
    socket thermal-send-rule stream 0660 system system
    group root
 
-service time_daemon /system/vendor/bin/time_daemon
+service audiod /system/vendor/bin/audiod
    class late_start
-   user root
-   group root
+   user system
+   group system
 
 on boot
     start rmt_storage
@@ -172,6 +192,7 @@ on boot
     setprop vendor.usb.rmnet.func.name "rmnet_bam"
     setprop vendor.usb.rmnet.inst.name "rmnet_bam_dmux"
     setprop vendor.usb.dpl.inst.name "dpl_bam_dmux"
+    setprop vendor.usb.qdss.inst.name "qdss"
 
     # Wifi firmware reload path
     chown wifi wifi /sys/module/wlan/parameters/fwpath
@@ -189,12 +210,23 @@ service wcnss-service /system/vendor/bin/wcnss_service
     group system wifi radio
     oneshot
 
+service imsstarter /vendor/bin/init.qti.ims.sh
+    class main
+    oneshot
+
+on property:vold.decrypt=trigger_restart_framework
+    start imsstarter
+
 ## imsqmidaemon starts with root and UID will be downgraded to SYSTEM.
 service vendor.imsqmidaemon /system/vendor/bin/imsqmidaemon
     class main
     user system
     socket ims_qmid stream 0660 system radio
     group radio log diag
+    disabled
+
+on property:vendor.service.qti.ims.enabled=1
+    start vendor.imsqmidaemon
 
 # imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
 service vendor.imsdatadaemon /system/vendor/bin/imsdatadaemon
@@ -246,7 +278,7 @@ on property:init.svc.zygote=restarting
     stop ppd
 
 on charger
-    setprop sys.usb.configfs 0
+    setprop sys.usb.configfs 1
     start vendor.hvdcp_opti
     start vendor.vm_bms
 
@@ -312,12 +344,7 @@ on boot
     write /sys/devices/soc.0/78b8000.i2c/i2c-4/4-0020/input/input0/fw_name PR1702898-s3528t_00260005_00380008.img
     write /sys/devices/soc.0/78b8000.i2c/i2c-4/4-0020/input/input0/update_fw 1
 
-service vendor.tlocd /vendor/bin/tloc_daemon
-    class late_start
-    user system
-    group drmrpc gps net_raw
-
-on boot
+    # LEDs
     chown system system /sys/class/leds/red/blink
     chown system system /sys/class/leds/red/breath
     chown system system /sys/class/leds/red/delay_on
