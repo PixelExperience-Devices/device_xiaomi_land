@@ -411,7 +411,8 @@ PRODUCT_PACKAGES += \
 
 # VNDK-SP
 PRODUCT_PACKAGES += \
-    vndk-sp
+    vndk-sp \
+    vndk-ext
 
 # WiFi
 PRODUCT_PACKAGES += \
