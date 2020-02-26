@@ -492,7 +492,7 @@ vendor/bin/hw/qcrild
 vendor/bin/ATFWD-daemon
 vendor/bin/ipacm-diag
 vendor/bin/netmgrd
-vendor/bin/port-bridge
+vendor/bin/port-bridge|28265e259a83b1370827f626fad4abe6784a9025
 vendor/bin/qti
 vendor/bin/rmt_storage
 vendor/bin/tftp_server
