@@ -969,6 +969,8 @@ lib64/libcom_fingerprints_service.so:vendor/lib64/libcom_fingerprints_service.so
 lib64/libfp_client.so:vendor/lib64/libfp_client.so
 lib64/libfpnav.so:vendor/lib64/libfpnav.so
 lib64/libfpservice.so:vendor/lib64/libfpservice.so
+vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service.land
+vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.land.rc
 
 # Keylayout
 usr/keylayout/gpio-keys.kl:vendor/usr/keylayout/gpio-keys.kl
