@@ -8,6 +8,26 @@ on enable-low-power
     write /proc/sys/vm/swappiness 100
     swapon_all /vendor/etc/fstab.qcom
 
+    # HMP Task packing settings (for power cluster)
+    write /sys/devices/system/cpu/cpu4/sched_mostly_idle_load 50
+    write /sys/devices/system/cpu/cpu5/sched_mostly_idle_load 50
+    write /sys/devices/system/cpu/cpu6/sched_mostly_idle_load 50
+    write /sys/devices/system/cpu/cpu7/sched_mostly_idle_load 50
+
+    write /sys/devices/system/cpu/cpu4/sched_mostly_idle_nr_run 10
+    write /sys/devices/system/cpu/cpu5/sched_mostly_idle_nr_run 10
+    write /sys/devices/system/cpu/cpu6/sched_mostly_idle_nr_run 10
+    write /sys/devices/system/cpu/cpu7/sched_mostly_idle_nr_run 10
+
+    write /sys/devices/system/cpu/cpu4/sched_prefer_idle 1
+    write /sys/devices/system/cpu/cpu5/sched_prefer_idle 1
+    write /sys/devices/system/cpu/cpu6/sched_prefer_idle 1
+    write /sys/devices/system/cpu/cpu7/sched_prefer_idle 1
+
+    # HMP scheduler settings
+    write /proc/sys/kernel/sched_window_stats_policy 2
+    write /proc/sys/kernel/sched_ravg_hist_size 5
+
 on charger
     # Offline all cores other than CPU0
     write /sys/devices/system/cpu/cpu1/online 0
