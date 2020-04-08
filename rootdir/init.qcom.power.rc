@@ -28,6 +28,27 @@ on enable-low-power
     write /proc/sys/kernel/sched_window_stats_policy 2
     write /proc/sys/kernel/sched_ravg_hist_size 5
 
+    # Set GPU idle freq & default gov
+    write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 4
+    write /sys/class/kgsl/kgsl-3d0/devfreq/governor simple_ondemand
+
+    # Enable core control
+    write /sys/devices/system/cpu/cpu0/core_ctl/min_cpus 2
+    write /sys/devices/system/cpu/cpu0/core_ctl/max_cpus 4
+    write /sys/devices/system/cpu/cpu0/core_ctl/busy_up_thres 75
+    write /sys/devices/system/cpu/cpu0/core_ctl/busy_down_thres 55
+    write /sys/devices/system/cpu/cpu0/core_ctl/offline_delay_ms 100
+    write /sys/devices/system/cpu/cpu0/core_ctl/is_big_cluster 1
+    write /sys/devices/system/cpu/cpu0/core_ctl/task_thres 20
+
+    write /sys/devices/system/cpu/cpu4/core_ctl/min_cpus 2
+    write /sys/devices/system/cpu/cpu4/core_ctl/max_cpus 4
+    write /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres 85
+    write /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres 50
+    write /sys/devices/system/cpu/cpu4/core_ctl/offline_delay_ms 1000
+    write /sys/devices/system/cpu/cpu4/core_ctl/is_big_cluster 0
+    write /sys/devices/system/cpu/cpu4/core_ctl/task_thres 10
+
 on charger
     # Offline all cores other than CPU0
     write /sys/devices/system/cpu/cpu1/online 0
