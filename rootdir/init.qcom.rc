@@ -221,6 +221,10 @@ on boot
     mkdir /data/vendor/sensors
     chown system system /data/vendor/sensors
 
+    # Double Tap To Wake
+    chown system system /sys/android_touch/doubletap2wake
+    chmod 660 /sys/android_touch/doubletap2wake
+
 # msm specific files that need to be created on /data
 on post-fs-data
     mkdir /data/vendor/misc 01771 system system
