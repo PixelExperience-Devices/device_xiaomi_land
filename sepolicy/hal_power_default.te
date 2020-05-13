@@ -1,0 +1,3 @@
+# DT2W
+allow hal_power_default sysfs_dt2w:dir { search };
+allow hal_power_default sysfs_dt2w:file rw_file_perms;
