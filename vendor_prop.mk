@@ -109,7 +109,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.vidc.enc.narrow.searchrange=1 \
     vendor.vidc.disable.split.mode=1 \
     vendor.video.disable.ubwc=1 \
-    media.settings.xml=/vendor/etc/media_profiles_V1_0.xml \
     media.stagefright.thumbnail.prefer_hw_codecs=true
 
 # Netmgrd

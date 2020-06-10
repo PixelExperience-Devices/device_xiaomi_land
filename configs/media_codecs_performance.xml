@@ -21,13 +21,13 @@
 <MediaCodecs>
     <Encoders>
         <MediaCodec name="OMX.qcom.video.encoder.avc" type="video/avc" update="true">
-            <Limit name="measured-frame-rate-320x240" range="130-130" />
-            <Limit name="measured-frame-rate-720x480" range="50-50" />
+            <Limit name="measured-frame-rate-320x240" range="377-377" />
+            <Limit name="measured-frame-rate-720x480" range="113-113" />
             <Limit name="measured-frame-rate-1280x720" range="33-33" />
             <Limit name="measured-frame-rate-1920x1080" range="18-18" />
         </MediaCodec>
         <MediaCodec name="OMX.qcom.video.encoder.h263sw" type="video/3gpp" update="true">
-            <Limit name="measured-frame-rate-176x144" range="394-394" />
+            <Limit name="measured-frame-rate-176x144" range="160-160" />
             <Limit name="measured-frame-rate-352x288" range="86-86" />
         </MediaCodec>
         <MediaCodec name="OMX.qcom.video.encoder.mpeg4sw" type="video/mp4v-es" update="true">
@@ -128,8 +128,10 @@
             <Limit name="measured-frame-rate-1280x720" range="32-32" />
             <Limit name="measured-frame-rate-1920x1080" range="21-21" />
         </MediaCodec>
-        <MediaCodec name="OMX.google.mpeg4.decoder" type="video/mp4v-es" update="true">
+        <MediaCodec name="OMX.google.mpeg4.decoder" update="true">
+            <Type name="video/mp4v-es">
                 <Limit name="measured-frame-rate-176x144" range="430-450" />
+            </Type>
         </MediaCodec>
         <MediaCodec name="c2.android.mpeg4.decoder" update="true">
             <Type name="video/mp4v-es">
@@ -141,7 +143,7 @@
             <Limit name="measured-frame-rate-352x288" range="172-175" />
         </MediaCodec>
         <MediaCodec name="c2.android.h263.decoder" type="video/3gpp" update="true">
-             <Limit name="measured-frame-rate-176x144" range="896-955" />
+             <Limit name="measured-frame-rate-176x144" range="360-375" />
              <Limit name="measured-frame-rate-352x288" range="689-670" />
         </MediaCodec>
         <MediaCodec name="OMX.google.vp8.decoder" type="video/x-vnd.on2.vp8" update="true">
