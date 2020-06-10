@@ -58,6 +58,20 @@
             Id="0x00001081" Type="2" Enable="true" Timeout="5000" Target="msm8917" Kernel="3.18"
             Resources="0x40C04000, 0x1, 0x40C0C000, 0x1, 0x40C14000, 0x1, 0x40C10000, 0x1" />
 
+    <!-- config_enableLaunchBoostv2-->
+        <!-- SCHEDBOOST resource opcode, value-->
+        <!-- SCHED GROUP DOWNMIGRATE resource opcode, value-->
+        <!-- SCHED GROUP UPMIGRATE resource opcode, value-->
+        <!-- LPM Bias resource opcode, value-->
+        <!-- SCHED DOWNMIGRATE resource opcode, value -->
+        <!-- SCHED UPMIGRATE resource opcode, value -->
+
+        <!-- Type="3", FA launch boost of 15sec -->
+        <Config
+            Id="0x00001081" Type="3" Enable="true" Timeout="15000" Target="sdm429"
+            Resources="0x40C00000, 0x1, 0x40C58000, 0x2D, 0x40C54000, 0x41,
+                      0x40408000, 0x63, 0x40C20000, 0x28, 0x40C1C000, 0x3C" />
+
     <!-- config_enableLaunchBoostv4-->
         <!-- MIN_ONLINE_CPU_CLUSTER_BIG resource opcode, value-->
         <!-- MIN_ONLINE_CPU_CLUSTER_LITTLE resource opcode, value-->
@@ -195,6 +209,38 @@
             Id="0x00001080" Type="2" Enable="true" Target="qm215"
             Resources="0x40C00000, 0x1, 0x40800000, 0x514" />
 
+    <!--Pre-Fling boost-->
+        <!-- SCHEDBOOST resource opcode, value-->
+        <!-- CPUBOOST_MIN_FREQ BIG Core resource opcode, value-->
+        <!-- GPU MIN_FREQUENCY resource opcode,value-->
+        <Config
+            Id="0x00001080" Type="4" Enable="true" Timeout="80" Target="qm215" Resolution="HD+"
+            Resources="0x40C00000, 0x1, 0x40800000, 0x514, 0x4280C000, 596" />
+
+        <!-- SCHEDBOOST resource opcode, value-->
+        <!-- CPUBOOST_MIN_FREQ BIG Core resource opcode, value-->
+
+        <Config
+            Id="0x00001080" Type="4" Enable="true" Timeout="80" Target="sdm429"
+            Resources="0x40C00000, 0x1, 0x40800000, 0x514" />
+
+    <!--Drag boost-->
+        <!-- SCHEDBOOST resource opcode, value-->
+        <!-- CPUBOOST_MIN_FREQ BIG Core resource opcode, value-->
+        <!-- GPU MIN_FREQUENCY resource opcode,value-->
+
+        <!-- Type="1", Drag boost -->
+        <Config
+            Id="0x00001087" Type="1" Enable="true" Timeout="0" Target="qm215" Resolution="HD+"
+            Resources="0x40C00000, 0x1, 0x40800000, 0x514, 0x4280C000, 596" />
+
+        <!-- SCHEDBOOST resource opcode, value-->
+        <!-- CPUBOOST_MIN_FREQ BIG Core resource opcode, value-->
+
+        <Config
+            Id="0x00001087" Type="1" Enable="true" Timeout="0" Target="sdm429"
+            Resources="0x40C00000, 0x1, 0x40800000, 0x514" />
+
     <!--Rotation latency boost-->
         <!-- SCHEDBOOST resource opcode, value-->
         <!-- CPUBOOST_MAX_FREQ BIG Core resource opcode, value-->
@@ -252,6 +298,50 @@
         <Config
             Id="0x00001090" Enable="true" Timeout="1000" Target="qm215"
             Resources="0x40800000, 1000, 0x4280C000, 596" />
+
+    <!--Display on Resource -->
+        <!-- Display on resource opcode, value -->
+        <Config
+                Id="0x00001041" Enable="true" Timeout="0" Target="msm8937"
+                Resources="0x40000000, 1" />
+
+        <Config
+                Id="0x00001041" Enable="true" Timeout="0" Target="msm8917"
+                Resources="0x40000000, 1" />
+
+        <Config
+                Id="0x00001041" Enable="true" Timeout="0" Target="sdm439"
+                Resources="0x40000000, 1" />
+
+        <Config
+                Id="0x00001041" Enable="true" Timeout="0" Target="sdm429"
+                Resources="0x40000000, 1" />
+
+        <Config
+                Id="0x00001041" Enable="true" Timeout="0" Target="qm215"
+                Resources="0x40000000, 1" />
+
+    <!--Display off Resource -->
+        <!-- Display on resource opcode, value -->
+        <Config
+                Id="0x00001040" Enable="true" Timeout="0" Target="msm8937"
+                Resources="0x40000000, 0x0" />
+
+        <Config
+                Id="0x00001040" Enable="true" Timeout="0" Target="msm8917"
+                Resources="0x40000000, 0x0" />
+
+        <Config
+                Id="0x00001040" Enable="true" Timeout="0" Target="sdm439"
+                Resources="0x40000000, 0x0" />
+
+        <Config
+                Id="0x00001040" Enable="true" Timeout="0" Target="sdm429"
+                Resources="0x40000000, 0x0" />
+
+        <Config
+                Id="0x00001040" Enable="true" Timeout="0" Target="qm215"
+                Resources="0x40000000, 0x0" />
 
     </PerfBoost>
 </BoostConfigs>
