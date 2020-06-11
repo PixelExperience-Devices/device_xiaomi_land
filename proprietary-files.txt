@@ -972,7 +972,7 @@ lib64/libfp_client.so:vendor/lib64/libfp_client.so
 lib64/libfpnav.so:vendor/lib64/libfpnav.so
 lib64/libfpservice.so:vendor/lib64/libfpservice.so
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service.land
-vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.land.rc
+vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.land.rc|db6f25e70a9dcd7d599e2b0fd297f941bb4a61ed
 vendor/lib64/libbindergx.so
 
 # Keylayout
