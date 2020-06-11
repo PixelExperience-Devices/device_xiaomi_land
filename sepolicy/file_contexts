@@ -30,3 +30,5 @@
 /sys/devices/soc/leds-qpnp-[0-9]+/leds(/.*)?                                u:object_r:sysfs_leds:s0
 /sys/devices/soc/soc:gpio-leds/leds(/.*)?                                   u:object_r:sysfs_leds:s0
 
+# VirtualKeys
+/sys/board_properties/virtualkeys.*         u:object_r:sysfs_virtualkeys:s0
