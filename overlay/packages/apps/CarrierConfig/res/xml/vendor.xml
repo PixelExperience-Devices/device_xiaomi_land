@@ -106,6 +106,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="allow_one_way_accept_video_call" value="true"/>
         <!-- Config for multi anchor conference support  -->
         <boolean name="carrier_supports_multianchor_conference" value="false"/>
+
+        <string name="gps.supl_host">supl.google.com</string>
+        <string name="gps.supl_port">7275</string>
+        <string name="gps.supl_ver">0x20000</string>
+        <string name="gps.supl_mode">0</string>
+        <string name="gps.supl_es">0</string>
+        <string name="gps.lpp_profile">3</string>
+        <string name="gps.use_emergency_pdn_for_emergency_supl">1</string>
+        <string name="gps.a_glonass_pos_protocol_select">0</string>
+        <string name="gps.gps_lock">0</string>
     </carrier_config>
 
     <carrier_config mcc="001" mnc="01">
