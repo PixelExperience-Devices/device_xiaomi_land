@@ -116,6 +116,9 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <string name="gps.use_emergency_pdn_for_emergency_supl">1</string>
         <string name="gps.a_glonass_pos_protocol_select">0</string>
         <string name="gps.gps_lock">0</string>
+        <string name="gps.xtra_server_1">https://xtrapath1.izatcloud.net/xtra3grc.bin</string>
+        <string name="gps.xtra_server_2">https://xtrapath2.izatcloud.net/xtra3grc.bin</string>
+        <string name="gps.xtra_server_3">https://xtrapath3.izatcloud.net/xtra3grc.bin</string>
     </carrier_config>
 
     <carrier_config mcc="001" mnc="01">
