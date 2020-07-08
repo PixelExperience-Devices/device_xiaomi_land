@@ -193,9 +193,6 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_land
 TARGET_PROVIDES_KEYMASTER := true
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
-# Lights
-TARGET_PROVIDES_LIBLIGHT := true
-
 # Lockscreen real time charging current values
 BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
 

@@ -309,20 +309,6 @@ on boot
     write /sys/devices/soc.0/78b8000.i2c/i2c-4/4-0020/input/input0/fw_name PR1702898-s3528t_00260005_00380008.img
     write /sys/devices/soc.0/78b8000.i2c/i2c-4/4-0020/input/input0/update_fw 1
 
-    # LEDs
-    chown system system /sys/class/leds/red/blink
-    chown system system /sys/class/leds/red/breath
-    chown system system /sys/class/leds/red/delay_on
-    chown system system /sys/class/leds/red/delay_off
-    chown system system /sys/class/leds/green/blink
-    chown system system /sys/class/leds/green/breath
-    chown system system /sys/class/leds/green/delay_on
-    chown system system /sys/class/leds/green/delay_off
-    chown system system /sys/class/leds/blue/blink
-    chown system system /sys/class/leds/blue/breath
-    chown system system /sys/class/leds/blue/delay_on
-    chown system system /sys/class/leds/blue/delay_off
-
 # FM radio
 on property:vendor.hw.fm.init=*
     write /sys/module/radio_iris_transport/parameters/fmsmd_set ${vendor.hw.fm.init}
