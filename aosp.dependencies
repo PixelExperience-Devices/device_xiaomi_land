@@ -5,8 +5,9 @@
     "branch": "ten"
   },
   {
-    "repository": "vendor_xiaomi",
-    "target_path": "vendor/xiaomi",
+    "remote": "pixel-devices-bitbucket",
+    "repository": "vendor_xiaomi_land",
+    "target_path": "vendor/xiaomi/land",
     "branch": "ten"
   }
 ]
