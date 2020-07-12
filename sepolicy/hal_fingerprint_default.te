@@ -18,6 +18,7 @@ allow hal_fingerprint_default fingerprint_service:service_manager find;
 allow hal_fingerprint_default gx_fpd_service:service_manager find;
 allow hal_fingerprint_default init:unix_stream_socket connectto;
 
+allow hal_fingerprint_default gx_fpd:binder { call transfer };
 allow hal_fingerprint_default servicemanager:binder { call transfer };
 allow hal_fingerprint_default hwservicemanager:binder { call transfer };
 
