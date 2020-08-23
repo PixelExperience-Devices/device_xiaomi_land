@@ -11,6 +11,7 @@ typeattribute gx_fpd data_between_core_and_vendor_violators;
 
 # add services
 allow gx_fpd gx_fpd_service:service_manager { add find };
+add_service(gx_fpd, gx_fpd_service);
 
 # allow storing goodix data
 allow gx_fpd { persist_drm_file gx_fpd_data_file }:dir create_dir_perms;
