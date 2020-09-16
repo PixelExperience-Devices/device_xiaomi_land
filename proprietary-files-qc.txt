@@ -43,7 +43,9 @@ vendor/lib/hw/com.qualcomm.qti.ant@1.0-impl.so
 vendor/lib64/com.qualcomm.qti.ant@1.0.so
 vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 
-# Audio - from LA.UM.8.6.r1-04400-89xx.0
+# Audio - from Daisy QKQ1.191002.002-V11.0.9.0.QDLMIXM
+etc/permissions/audiosphere.xml
+framework/audiosphere.jar
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so
 vendor/lib/libacdbrtac.so
@@ -54,6 +56,7 @@ vendor/lib/libaudioalsa.so
 vendor/lib/libdrc.so
 vendor/lib/libqtigef.so
 vendor/lib/libsurround_3mic_proc.so
+vendor/lib/soundfx/libasphere.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
@@ -64,7 +67,9 @@ vendor/lib64/libadiertac.so
 vendor/lib64/libaudcal.so
 vendor/lib64/libaudioalsa.so
 vendor/lib64/libqtigef.so
+vendor/lib64/soundfx/libasphere.so
 vendor/lib64/soundfx/libqcbassboost.so
+vendor/lib64/soundfx/libqcreverb.so
 vendor/lib64/soundfx/libqcvirt.so
 
 # Bluetooth - from LA.UM.8.6.r1-04400-89xx.0
