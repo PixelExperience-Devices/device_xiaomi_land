@@ -1,21 +1,27 @@
-# ADSP - from LA.UM.8.6.r1-04400-89xx.0
+# ADSP - from Daisy QKQ1.191002.002-V11.0.9.0.QDLMIXM
 vendor/bin/adsprpcd
 vendor/lib/libadsprpc.so
 vendor/lib/libadsp_default_listener.so
 vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libfastcvopt.so
 vendor/lib/libmdsprpc.so
+vendor/lib/libsdsprpc.so
 vendor/lib64/libadsprpc.so
 vendor/lib64/libadsp_default_listener.so
 vendor/lib64/libfastcvadsp_stub.so
 vendor/lib64/libfastcvopt.so
 vendor/lib64/libmdsprpc.so
+vendor/lib64/libsdsprpc.so
 
-# ADSP modules - from LA.UM.8.6.r1-04400-89xx.0
+# ADSP modules - from Daisy QKQ1.191002.002-V11.0.9.0.QDLMIXM
+vendor/lib/rfsa/adsp/dirac_resource.dar
 vendor/lib/rfsa/adsp/libapps_mem_heap.so
+vendor/lib/rfsa/adsp/libdirac-capiv2.so
 vendor/lib/rfsa/adsp/libdspCV_skel.so
-vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
 vendor/lib/rfsa/adsp/libfastcvadsp.so
+vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
+vendor/lib/rfsa/adsp/libFastRPC_AUE_Forward_skel.so
+vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_Qtc2_skel.so
 
 # Alarm - from LA.UM.8.6.r1-04400-89xx.0
 -product/app/PowerOffAlarm/PowerOffAlarm.apk
