@@ -177,7 +177,7 @@ Return<RequestStatus> BiometricsFingerprint::cancel() {
     /* notify client on cancel hack */
     int ret = mDevice->cancel(mDevice);
     ALOG(LOG_VERBOSE, LOG_TAG, "cancel() %d\n", ret);
-    if (ret == 0 && !is_goodix) {
+    if (ret == 0) {
         fingerprint_msg_t msg;
         msg.type = FINGERPRINT_ERROR;
         msg.data.error = FINGERPRINT_ERROR_CANCELED;
