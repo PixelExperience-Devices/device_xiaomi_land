@@ -2,6 +2,9 @@
 ro.config.media_vol_steps=20
 ro.config.vc_call_vol_steps=8
 
+# BPF
+ro.kernel.ebpf.supported=true
+
 # Bluetooth
 persist.vendor.bluetooth.modem_nv_support=true
 persist.vendor.btstack.enable.splita2dp=false
