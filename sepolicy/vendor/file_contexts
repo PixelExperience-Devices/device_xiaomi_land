@@ -21,6 +21,7 @@
 
 # Legacy root dirs
 /firmware(/.*)?                             u:object_r:firmware_file:s0
+/persist(/.*)?                              u:object_r:mnt_vendor_file:s0
 
 # Lights / IR Blaster
 /sys/devices(/platform)?/soc/[a-z0-9]+\.sdhci/leds(/.*)?                                u:object_r:sysfs_leds:s0
