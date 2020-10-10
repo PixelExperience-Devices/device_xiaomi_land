@@ -1,26 +1,28 @@
-type gx_fpd, domain, binder_in_vendor_violators;
+type gx_fpd, domain, vendor_executes_system_violators;
 type gx_fpd_exec, exec_type, vendor_file_type, file_type;
 
 # gx_fpd
 init_daemon_domain(gx_fpd)
-binder_call(gx_fpd, hal_fingerprint_default)
+
+typeattribute gx_fpd binder_in_vendor_violators;
+
+# Allow Binder communication
 binder_use(gx_fpd)
-r_dir_file(gx_fpd, firmware_file)
+binder_call(gx_fpd, hal_fingerprint_default)
+
+# Add services
+add_service(gx_fpd, gx_fpd_service)
 
 typeattribute gx_fpd data_between_core_and_vendor_violators;
 
-# add services
-allow gx_fpd gx_fpd_service:service_manager { add find };
-add_service(gx_fpd, gx_fpd_service);
-
-# allow storing goodix data
+# Allow storing goodix data
 allow gx_fpd { persist_drm_file gx_fpd_data_file }:dir create_dir_perms;
 allow gx_fpd { persist_drm_file gx_fpd_data_file }:file create_file_perms;
 
-#Allow access to goodix device
+# Allow access to goodix device
 allow gx_fpd gx_fpd_device:chr_file rw_file_perms;
 
-#Allow access to tee device
+# Allow access to tee device
 allow gx_fpd tee_device:chr_file rw_file_perms;
 
 # Allow access to ion device
@@ -32,10 +34,10 @@ allow gx_fpd self:netlink_socket create_socket_perms_no_ioctl;
 allow gx_fpd self:netlink_generic_socket create_socket_perms_no_ioctl;
 allow gx_fpd self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
 
-# Allow read write sysfs
-allow gx_fpd sysfs:file rw_file_perms;
+# Allow reading firmware file
+r_dir_file(gx_fpd, firmware_file)
 
-#allow read/write property
+# Allow read/write property
 set_prop(gx_fpd, system_prop)
 
 # Ignore all logging requests
