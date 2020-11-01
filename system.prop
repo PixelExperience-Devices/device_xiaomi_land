@@ -18,6 +18,7 @@ persist.vendor.camera.display.umax=1920x1080
 vendor.camera.hal1.packagelist=com.skype.raider,com.google.android.talk
 
 # Charger
+ro.charger.disable_init_blank=true
 ro.charger.enable_suspend=true
 
 # CNE/DPM
