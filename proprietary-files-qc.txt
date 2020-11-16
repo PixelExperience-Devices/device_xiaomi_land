@@ -1,4 +1,4 @@
-# ADSP - from Daisy QKQ1.191002.002-V11.0.9.0.QDLMIXM
+# ADSP - from olive - QKQ1.191014.001
 vendor/bin/adsprpcd
 vendor/lib/libadsprpc.so
 vendor/lib/libadsp_default_listener.so
@@ -13,17 +13,15 @@ vendor/lib64/libfastcvopt.so
 vendor/lib64/libmdsprpc.so
 vendor/lib64/libsdsprpc.so
 
-# ADSP modules - from Daisy QKQ1.191002.002-V11.0.9.0.QDLMIXM
+# ADSP modules - from olive - QKQ1.191014.001
 vendor/lib/rfsa/adsp/dirac_resource.dar
 vendor/lib/rfsa/adsp/libapps_mem_heap.so
 vendor/lib/rfsa/adsp/libdirac-capiv2.so
 vendor/lib/rfsa/adsp/libdspCV_skel.so
 vendor/lib/rfsa/adsp/libfastcvadsp.so
 vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
-vendor/lib/rfsa/adsp/libFastRPC_AUE_Forward_skel.so
-vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_Qtc2_skel.so
 
-# Alarm - from LA.UM.8.6.r1-04400-89xx.0
+# Alarm - from olive - QKQ1.191014.001
 -product/app/PowerOffAlarm/PowerOffAlarm.apk
 vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service
 vendor/bin/power_off_alarm
@@ -33,7 +31,7 @@ vendor/lib/vendor.qti.hardware.alarm@1.0.so
 vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 
-# ANT+ - from LA.UM.8.6.r1-04400-89xx.0
+# ANT+ - from olive - QKQ1.191014.001
 -lib/libantradio.so
 -lib64/libantradio.so
 product/lib/com.qualcomm.qti.ant@1.0.so
@@ -43,7 +41,7 @@ vendor/lib/hw/com.qualcomm.qti.ant@1.0-impl.so
 vendor/lib64/com.qualcomm.qti.ant@1.0.so
 vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 
-# Audio - from Daisy QKQ1.191002.002-V11.0.9.0.QDLMIXM
+# Audio - from olive - QKQ1.191014.001
 etc/permissions/audiosphere.xml
 framework/audiosphere.jar
 vendor/lib/libacdb-fts.so
@@ -54,8 +52,6 @@ vendor/lib/libadm.so
 vendor/lib/libaudcal.so
 vendor/lib/libaudioalsa.so
 vendor/lib/libdrc.so
-vendor/lib/libqtigef.so
-vendor/lib/libsurround_3mic_proc.so
 vendor/lib/soundfx/libasphere.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
@@ -66,47 +62,27 @@ vendor/lib64/libacdbrtac.so
 vendor/lib64/libadiertac.so
 vendor/lib64/libaudcal.so
 vendor/lib64/libaudioalsa.so
-vendor/lib64/libqtigef.so
 vendor/lib64/soundfx/libasphere.so
 vendor/lib64/soundfx/libqcbassboost.so
 vendor/lib64/soundfx/libqcreverb.so
 vendor/lib64/soundfx/libqcvirt.so
 
-# Bluetooth - from LA.UM.8.6.r1-04400-89xx.0
--lib/libbtconfigstore.so
--lib64/libbtconfigstore.so
+# Bluetooth - from olive - QKQ1.191014.001
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
+vendor/lib64/hw/audio.bluetooth_qti.default.so
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
+vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.0-impl.so
+vendor/lib64/libbluetooth_audio_session_qti.so
 vendor/lib64/libbtnv.so
 vendor/lib64/libbt-hidlclient.so
+vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 
 # Bluetooth (aptX) - from crosshatch - QP1A.190711.020
 product/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
 product/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
 
-# Bluetooth (Audio) - from LA.UM.8.6.r1-04400-89xx.0
-vendor/lib64/hw/audio.bluetooth_qti.default.so
-vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
-vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.0-impl.so
-vendor/lib64/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
-vendor/lib64/libbluetooth_audio_session_qti.so
-vendor/lib64/vendor.qti.hardware.bluetooth_audio@2.0.so
-vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
-vendor/lib64/vendor.qti.hardware.btconfigstore@1.0.so
-vendor/lib/hw/audio.bluetooth_qti.default.so
-vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
-vendor/lib/hw/vendor.qti.hardware.bluetooth_sar@1.0-impl.so
-vendor/lib/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
-vendor/lib/libbluetooth_audio_session_qti.so
-vendor/lib/vendor.qti.hardware.bluetooth_audio@2.0.so
-vendor/lib/vendor.qti.hardware.bluetooth_sar@1.0.so
-vendor/lib/vendor.qti.hardware.btconfigstore@1.0.so
-
-# Bluetooth (Shared Dependencies) - from LA.UM.8.6.r1-04400-89xx.0
-vendor/lib64/vendor.qti.hardware.fm@1.0.so
-
-# CNE - from LA.UM.8.6.r1-04400-89xx.0
+# CNE - from olive - QKQ1.191014.001
 etc/cne/Nexus/ATT/ATT_profiles.xml
 etc/cne/Nexus/ROW/ROW_profiles.xml
 etc/cne/Nexus/VZW/VZW_profiles.xml
@@ -167,13 +143,12 @@ vendor/lib64/vendor.qti.hardware.data.dynamicdds@1.0.so
 vendor/lib64/vendor.qti.hardware.data.iwlan@1.0.so
 vendor/lib64/vendor.qti.hardware.data.latency@1.0.so
 vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so
-vendor/lib64/vendor.qti.hardware.slmadapter@1.0.so
 vendor/lib64/vendor.qti.latency@2.0.so
 
-# Charger - from LA.UM.8.6.r1-04400-89xx.0
+# Charger - from olive - QKQ1.191014.001
 vendor/bin/hvdcp_opti
 
-# DPM - from LA.UM.8.6.r1-04400-89xx.0
+# DPM - from olive - QKQ1.191014.001
 product/bin/dpmd
 product/etc/dpm/dpm.conf
 product/etc/init/dpmd.rc
@@ -192,7 +167,7 @@ vendor/etc/init/dpmQmiMgr.rc
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
 vendor/lib64/libdpmqmihal.so
 
-# DRM - from LA.UM.8.6.r1-04400-89xx.0
+# DRM - from olive - QKQ1.191014.001
 vendor/bin/qseecomd
 vendor/lib/libQSEEComAPI.so
 vendor/lib64/libGPreqcancel.so
@@ -208,12 +183,14 @@ vendor/lib64/libsecureui.so
 vendor/lib64/libsecureui_svcsock.so
 vendor/lib64/libssd.so
 
-# DRM - Widevine - LA.UM.8.6.r1-04400-89xx.0
+# DRM - Widevine - olive - QKQ1.191014.001
 vendor/bin/hw/android.hardware.drm@1.2-service.widevine
 vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc
+vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib64/libwvhidl.so
+vendor/lib64/mediadrm/libwvdrmengine.so
 
-# FM - from LA.UM.8.6.r1-04400-89xx.0
+# FM - from olive - QKQ1.191014.001
 -product/lib/vendor.qti.hardware.fm@1.0.so
 -product/lib64/vendor.qti.hardware.fm@1.0.so
 vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so
@@ -221,11 +198,11 @@ vendor/lib/vendor.qti.hardware.fm@1.0.so
 vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.fm@1.0.so
 
-# Gatekeeper - from LA.UM.8.6.r1-04400-89xx.0
+# Gatekeeper - from olive - QKQ1.191014.001
 vendor/lib/hw/gatekeeper.msm8937.so
 vendor/lib64/hw/gatekeeper.msm8937.so
 
-# GPS - from LA.UM.8.6.r1-04400-89xx.0
+# GPS - from olive - QKQ1.191014.001
 vendor/bin/hw/android.hardware.gnss@2.0-service-qti
 vendor/bin/loc_launcher
 vendor/bin/lowi-server
@@ -233,9 +210,16 @@ vendor/bin/slim_daemon
 vendor/bin/xtra-daemon
 vendor/bin/xtwifi-client
 vendor/bin/xtwifi-inet-agent
+vendor/etc/cacert_location.pem
+vendor/etc/flp.conf
 vendor/etc/init/android.hardware.gnss@2.0-service-qti.rc
+vendor/etc/izat.conf
+vendor/etc/lowi.conf
+vendor/etc/sap.conf
 vendor/etc/vintf/manifest/android.hardware.gnss@2.0-service-qti.xml
 vendor/etc/vintf/manifest/vendor.qti.gnss@3.0-service.xml
+vendor/etc/xtra_root_cert.pem
+vendor/etc/xtwifi.conf
 vendor/lib64/hw/android.hardware.gnss@2.0-impl-qti.so
 vendor/lib64/hw/vendor.qti.gnss@3.0-impl.so
 vendor/lib64/libbatching.so
@@ -265,10 +249,14 @@ vendor/lib64/vendor.qti.gnss@2.0.so
 vendor/lib64/vendor.qti.gnss@2.1.so
 vendor/lib64/vendor.qti.gnss@3.0-service.so
 vendor/lib64/vendor.qti.gnss@3.0.so
+vendor/lib/vendor.qti.gnss@1.0.so
+vendor/lib/vendor.qti.gnss@1.1.so
+vendor/lib/vendor.qti.gnss@1.2.so
+vendor/lib/vendor.qti.gnss@2.0.so
+vendor/lib/vendor.qti.gnss@2.1.so
+vendor/lib/vendor.qti.gnss@3.0.so
 
-# Graphics - from LA.UM.8.6.r1-04400-89xx.0
-lib/libsdm-disp-apis.so:vendor/lib/libsdm-disp-apis.so
-lib64/libsdm-disp-apis.so:vendor/lib64/libsdm-disp-apis.so
+# Graphics - from olive - QKQ1.191014.001
 vendor/lib/egl/eglSubDriverAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
@@ -312,7 +300,9 @@ vendor/lib64/libmm-hdcpmgr.so
 vendor/lib64/librs_adreno.so
 vendor/lib64/librs_adreno_sha1.so
 
-# Graphics (SDM) - from LA.UM.8.6.r1-04400-89xx.0
+# Graphics (SDM) - from olive - QKQ1.191014.001
+lib/libsdm-disp-apis.so
+lib64/libsdm-disp-apis.so
 vendor/lib/libscalar.so
 vendor/lib/libsdm-color.so
 vendor/lib/libsdm-diag.so
@@ -326,7 +316,7 @@ vendor/lib64/libsdm-diag.so
 vendor/lib64/libsdmextension.so
 vendor/lib64/libtinyxml2_1.so
 
-# Graphics firmware - from LA.UM.8.6.r1-04400-89xx.0
+# Graphics firmware - from olive - QKQ1.191014.001
 vendor/firmware/a530_gpmu.fw2
 vendor/firmware/a530_pfp.fw
 vendor/firmware/a530_pm4.fw
@@ -337,11 +327,11 @@ vendor/firmware/a530v3_gpmu.fw2
 vendor/firmware/a530v3_seq.fw2
 vendor/firmware/a540_gpmu.fw2
 
-# Keystore - from LA.UM.8.6.r1-04400-89xx.0
+# Keystore - from olive - QKQ1.191014.001
 vendor/lib/hw/keystore.msm8937.so
 vendor/lib64/hw/keystore.msm8937.so
 
-# Keymaster - from LA.UM.8.6.r1-04400-89xx.0
+# Keymaster - from olive - QKQ1.191014.001
 vendor/lib/libkeymasterutils.so
 vendor/lib/libkeymasterprovision.so
 vendor/lib/libkeymasterdeviceutils.so
@@ -349,15 +339,13 @@ vendor/lib64/libkeymasterutils.so
 vendor/lib64/libkeymasterprovision.so
 vendor/lib64/libkeymasterdeviceutils.so
 
-# Listen - from LA.UM.8.6.r1-04400-89xx.0
+# Listen - from olive - QKQ1.191014.001
 vendor/lib/hw/sound_trigger.primary.msm8937.so
 vendor/lib/libadpcmdec.so
 vendor/lib/libsmwrapper.so
-vendor/lib/vendor.qti.voiceprint@1.0.so
 vendor/lib64/hw/sound_trigger.primary.msm8937.so
-vendor/lib64/vendor.qti.voiceprint@1.0.so
 
-# Media - from LA.UM.8.6.r1-04400-89xx.0
+# Media - from olive - QKQ1.191014.001
 lib/extractors/libmmparserextractor.so
 lib/libFileMux.so
 lib/libmmosal.so
@@ -404,7 +392,7 @@ vendor/lib64/libOmxSwVencMpeg4.so
 vendor/lib64/libOmxQcelp13Dec.so
 vendor/lib64/libOmxWmaDec.so
 
-# Perf - from LA.UM.8.6.r1-04400-89xx.0
+# Perf - from olive - QKQ1.191014.001
 lib/libqti-perfd-client_system.so
 lib/libqti_performance.so
 lib64/libqti-perfd-client_system.so
@@ -441,13 +429,13 @@ vendor/lib64/vendor.qti.hardware.iop@2.0.so
 vendor/lib64/vendor.qti.hardware.perf@1.0.so
 vendor/lib64/vendor.qti.hardware.perf@2.0.so
 
-# Peripheral manager - from LA.UM.8.6.r1-04400-89xx.0
+# Peripheral manager - from olive - QKQ1.191014.001
 vendor/bin/pm-proxy
 vendor/bin/pm-service
 vendor/lib/libperipheral_client.so
 vendor/lib64/libperipheral_client.so
 
-# Postprocessing - from LA.UM.8.6.r1-04400-89xx.0
+# Postprocessing - from olive - QKQ1.191014.001
 etc/permissions/com.qti.snapdragon.sdk.display.xml
 framework/com.qti.snapdragon.sdk.display.jar
 vendor/bin/hw/vendor.display.color@1.0-service
@@ -464,20 +452,13 @@ vendor/lib64/vendor.display.color@1.1.so
 vendor/lib64/vendor.display.color@1.2.so
 vendor/lib64/vendor.display.postproc@1.0.so
 
-# QDutils - from LA.UM.8.6.r1-04400-89xx.0f
+# QDutils - from olive - QKQ1.191014.001
 vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti
 vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc
 vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 
-# QMI - from Daisy QKQ1.191002.002-V11.0.9.0.QDLMIXM
-vendor/lib/libpdmapper.so
-vendor/lib/libqmi_cci.so
-vendor/lib64/libpdmapper.so
-vendor/lib64/libqmi_cci.so
-vendor/lib64/libqsocket.so
-
-# QMI - from Panther
+# QMI - from olive - PKQ1.190319.001
 etc/permissions/qti_permissions.xml
 vendor/bin/irsc_util
 vendor/lib/libdiag.so
@@ -509,42 +490,13 @@ vendor/lib64/libqmi_csi.so
 vendor/lib64/libqmi_encdec.so
 vendor/lib64/libqmiservices.so
 
-# Radio - from Daisy QKQ1.191002.002-V11.0.9.0.QDLMIXM
--product/app/QtiTelephonyService/QtiTelephonyService.apk
-product/etc/permissions/qcrilhook.xml
-product/etc/permissions/telephonyservice.xml
-product/etc/permissions/telephony_product_privapp-permissions-qti.xml
-product/framework/qcrilhook.jar
-product/framework/qti-telephony-common.jar
-product/framework/QtiTelephonyServicelibrary.jar
--product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
-vendor/bin/adpl
-vendor/etc/init/dataadpl.rc
-vendor/etc/init/dataqti.rc
-vendor/etc/init/netmgrd.rc
-vendor/etc/init/port-bridge.rc
-vendor/lib64/vendor.qti.hardware.radio.am@1.0.so
-vendor/lib64/vendor.qti.hardware.radio.atcmdfwd@1.0.so
-vendor/lib64/vendor.qti.hardware.radio.internal.deviceinfo@1.0.so
-vendor/lib64/vendor.qti.hardware.radio.lpa@1.0.so
-vendor/lib64/vendor.qti.hardware.radio.qcrilhook@1.0.so
-vendor/lib64/vendor.qti.hardware.radio.qtiradio@1.0.so
-vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.0.so
-vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.1.so
-vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.2.so
-vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.3.so
-vendor/lib64/vendor.qti.hardware.radio.uim@1.0.so
-vendor/lib64/vendor.qti.hardware.radio.uim@1.1.so
-vendor/lib64/vendor.qti.hardware.radio.uim@1.2.so
-vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0.so
-vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.1.so
-vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
+# QMI - from olive - QKQ1.191014.001
+vendor/lib/libpdmapper.so
+vendor/lib/libqmi_cci.so
+vendor/lib64/libpdmapper.so
+vendor/lib64/libqmi_cci.so
 
-# Radio - from LA.UM.8.6.r1-04400-89xx.0
-vendor/etc/init/vendor.qti.rmt_storage.rc
-vendor/etc/init/vendor.qti.tftp.rc
-
-# Radio - from Panther
+# Radio - from olive - PKQ1.190319.001
 vendor/bin/ATFWD-daemon
 vendor/bin/ipacm-diag
 vendor/bin/netmgrd
@@ -567,6 +519,7 @@ vendor/lib64/libpdnotifier.so
 vendor/lib64/libqcmaputils.so
 vendor/lib64/libqcrilFramework.so
 vendor/lib64/libqrtr.so
+vendor/lib64/libqsocket.so
 vendor/lib64/libril-qc-hal-qmi.so
 vendor/lib64/libril-qc-ltedirectdisc.so
 vendor/lib64/libril-qc-qmi-1.so
@@ -578,7 +531,39 @@ vendor/lib64/libsystem_health_mon.so
 vendor/lib64/qcrild_librilutils.so
 vendor/radio/qcril_database/qcril.db
 
-# Radio - IMS - from Daisy QKQ1.191002.002-V11.0.9.0.QDLMIXM
+# Radio - from olive - QKQ1.191014.001
+-product/app/QtiTelephonyService/QtiTelephonyService.apk
+product/etc/permissions/qcrilhook.xml
+product/etc/permissions/telephonyservice.xml
+product/etc/permissions/telephony_product_privapp-permissions-qti.xml
+product/framework/qcrilhook.jar
+product/framework/qti-telephony-common.jar
+product/framework/QtiTelephonyServicelibrary.jar
+-product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+vendor/bin/adpl
+vendor/etc/init/dataadpl.rc
+vendor/etc/init/dataqti.rc
+vendor/etc/init/netmgrd.rc
+vendor/etc/init/port-bridge.rc
+vendor/etc/init/vendor.qti.rmt_storage.rc
+vendor/lib64/vendor.qti.hardware.radio.am@1.0.so
+vendor/lib64/vendor.qti.hardware.radio.atcmdfwd@1.0.so
+vendor/lib64/vendor.qti.hardware.radio.internal.deviceinfo@1.0.so
+vendor/lib64/vendor.qti.hardware.radio.lpa@1.0.so
+vendor/lib64/vendor.qti.hardware.radio.qcrilhook@1.0.so
+vendor/lib64/vendor.qti.hardware.radio.qtiradio@1.0.so
+vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.0.so
+vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.1.so
+vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.2.so
+vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.3.so
+vendor/lib64/vendor.qti.hardware.radio.uim@1.0.so
+vendor/lib64/vendor.qti.hardware.radio.uim@1.1.so
+vendor/lib64/vendor.qti.hardware.radio.uim@1.2.so
+vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0.so
+vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.1.so
+vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
+
+# Radio - IMS - from olive - QKQ1.191014.001
 -product/app/imssettings/imssettings.apk
 -product/app/uceShimService/uceShimService.apk
 product/etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml
@@ -653,7 +638,7 @@ vendor/lib64/vendor.qti.imsrtpservice@2.0.so
 vendor/lib64/vendor.qti.imsrtpservice@2.1-service-Impl.so
 vendor/lib64/vendor.qti.imsrtpservice@2.1.so
 
-# Sensors - from LA.UM.8.6.r1-04400-89xx.0
+# Sensors - from olive - QKQ1.191014.001
 vendor/bin/sensors.qti
 vendor/lib/hw/activity_recognition.msm8937.so
 vendor/lib/libsensor1.so
@@ -664,29 +649,29 @@ vendor/lib64/libsensor1.so
 vendor/lib64/libsensor_reg.so
 vendor/lib64/sensors.ssc.so
 
-# Thermal - from LA.UM.8.6.r1-04400-89xx.0
+# Thermal - from olive - QKQ1.191014.001
 vendor/bin/thermal-engine
 -vendor/lib/libthermalclient.so
 -vendor/lib64/libthermalclient.so
-vendor/lib64/libthermalioctl.so
+vendor/lib64/libthermalfeature.so
 
-# Time services - from LA.UM.8.6.r1-04400-89xx.0
+# Time services - from olive - QKQ1.191014.001
 -vendor/app/TimeService/TimeService.apk;:timeservice_app_cert-legacy-um
 vendor/bin/time_daemon
 vendor/etc/init/init.time_daemon.rc
 vendor/lib/libtime_genoff.so
 vendor/lib64/libtime_genoff.so
 
-# TUI - from LA.UM.8.6.r1-04400-89xx.0
+# TUI - from olive - QKQ1.191014.001
 vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
 vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
 vendor/lib/vendor.qti.hardware.tui_comm@1.0.so
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
-# Wi-Fi - from LA.UM.8.6.r1-04400-89xx.0
+# Wi-Fi - from olive - QKQ1.191014.001
 vendor/bin/wcnss_service
 
-# WiFi Display - from LA.UM.8.6.r1-04400-89xx.0
+# WiFi Display - from olive - QKQ1.191014.001
 bin/wfdservice
 etc/init/wfdservice.rc
 etc/wfdconfig.xml
@@ -717,6 +702,7 @@ lib64/libwfdnative.so
 -priv-app/WfdService/WfdService.apk
 vendor/bin/wifidisplayhalservice
 vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc
+vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0.so
 vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0-halimpl.so
 vendor/lib/libwfdcommonutils_proprietary.so
 vendor/lib/libwfdhaldsmanager.so
