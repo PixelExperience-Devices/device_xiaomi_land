@@ -66,6 +66,15 @@ fi
 function blob_fixup() {
     case "${1}" in
 
+    vendor/bin/gx_fpcmd|vendor/bin/gx_fpd)
+        patchelf --remove-needed "libbacktrace.so" "${2}"
+        patchelf --remove-needed "libunwind.so" "${2}"
+        ;;
+
+    vendor/lib64/hw/fingerprint.goodix.so)
+        patchelf --remove-needed "libandroid_runtime.so" "${2}"
+        ;;
+
     vendor/lib/libmmcamera2_sensor_modules.so)
         sed -i "s|/system/etc/camera|/vendor/etc/camera|g" "${2}"
         ;;
