@@ -41,6 +41,18 @@ include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := \
+    android/looper.cpp \
+    android/sensor.cpp
+LOCAL_SHARED_LIBRARIES := libutils
+LOCAL_MODULE := libshim_android
+LOCAL_VENDOR_MODULE := true
+LOCAL_MODULE_TAGS := optional
+LOCAL_32_BIT_ONLY := true
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := \
     binder/PermissionCache.cpp
 LOCAL_MODULE := libshim_binder
 LOCAL_MODULE_TAGS := optional

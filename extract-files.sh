@@ -79,6 +79,19 @@ function blob_fixup() {
         sed -i "s|/system/etc/camera|/vendor/etc/camera|g" "${2}"
         ;;
 
+    vendor/lib/libmmcamera2_stats_modules.so)
+        sed -i "s|libgui.so|libwui.so|g" "${2}"
+        patchelf --replace-needed "libandroid.so" "libshim_android.so" "${2}"
+        ;;
+
+    vendor/lib/libmmsw_detail_enhancement.so|vendor/lib/libmmsw_platform.so|vendor/lib64/libmmsw_detail_enhancement.so|vendor/lib64/libmmsw_platform.so)
+        sed -i "s|libgui.so|libwui.so|g" "${2}"
+        ;;
+
+    vendor/lib/libFaceGrade.so|vendor/lib/libarcsoft_beauty_shot.so)
+        patchelf --remove-needed "libandroid.so" "${2}"
+        ;;
+
     vendor/lib64/libfpservice.so)
         patchelf --add-needed "libshim_binder.so" "${2}"
         ;;

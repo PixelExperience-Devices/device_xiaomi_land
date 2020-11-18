@@ -264,6 +264,7 @@ PRODUCT_PACKAGES += \
 
 # Libshims
 PRODUCT_PACKAGES += \
+    libshim_android \
     libshim_binder \
     libshim_mutexdestroy \
     libshim_pthreadts
