@@ -70,6 +70,10 @@ function blob_fixup() {
         patchelf --remove-needed "libbacktrace.so" "${2}"
         patchelf --remove-needed "libunwind.so" "${2}"
         ;;
+    
+    vendor/bin/gx_fpd)
+        patchelf --add-needed "liblog.so" "${2}"
+        ;;
 
     vendor/lib64/hw/fingerprint.goodix.so)
         patchelf --remove-needed "libandroid_runtime.so" "${2}"
