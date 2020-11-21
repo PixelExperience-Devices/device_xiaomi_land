@@ -1,13 +1,11 @@
-type gx_fpd, domain, vendor_executes_system_violators;
+type gx_fpd, domain;
 type gx_fpd_exec, exec_type, vendor_file_type, file_type;
 
 # gx_fpd
 init_daemon_domain(gx_fpd)
 
-typeattribute gx_fpd binder_in_vendor_violators;
-
 # Allow Binder communication
-binder_use(gx_fpd)
+vndbinder_use(gx_fpd)
 binder_call(gx_fpd, hal_fingerprint_default)
 
 # Add services

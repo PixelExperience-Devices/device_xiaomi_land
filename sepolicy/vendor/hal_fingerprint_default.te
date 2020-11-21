@@ -1,7 +1,7 @@
 typeattribute hal_fingerprint_default binder_in_vendor_violators;
 
 # Allow Binder communication
-binder_use(hal_fingerprint_default)
+vndbinder_use(hal_fingerprint_default)
 binder_call(hal_fingerprint_default, gx_fpd)
 binder_call(hal_fingerprint_default, keystore)
 
