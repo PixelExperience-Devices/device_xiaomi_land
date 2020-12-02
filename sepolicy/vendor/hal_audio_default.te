@@ -1,4 +1,1 @@
 allow hal_audio_default sysfs:dir { read open };
-
-get_prop(hal_audio_default, dirac_prop)
-set_prop(hal_audio_default, dirac_prop)
