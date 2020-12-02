@@ -47,4 +47,3 @@ on property:init.svc.recovery=running
 
 on property:sys.boot_completed=1
     trigger enable-low-power
-    setprop sys.io.scheduler bfq
