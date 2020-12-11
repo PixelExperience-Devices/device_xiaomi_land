@@ -26,6 +26,10 @@ $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 TARGET_GAPPS_ARCH := arm64
 TARGET_BOOT_ANIMATION_RES := 720
 
+# Pixel customization
+TARGET_INCLUDE_STOCK_ARCORE := false
+TARGET_INCLUDE_LIVE_WALLPAPERS := false
+
 # Inherit from land device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
