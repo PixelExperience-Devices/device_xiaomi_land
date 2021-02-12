@@ -1,4 +1,4 @@
-# ADSP - from olive - QKQ1.191014.001
+# ADSP - from LA.UM.9.6.2.r1-03600-89xx.0
 vendor/bin/adsprpcd
 vendor/lib/libadsprpc.so
 vendor/lib/libadsp_default_listener.so
@@ -13,10 +13,8 @@ vendor/lib64/libfastcvopt.so
 vendor/lib64/libmdsprpc.so
 vendor/lib64/libsdsprpc.so
 
-# ADSP modules - from olive - QKQ1.191014.001
-vendor/lib/rfsa/adsp/dirac_resource.dar
+# ADSP modules - from LA.UM.9.6.2.r1-03600-89xx.0
 vendor/lib/rfsa/adsp/libapps_mem_heap.so
-vendor/lib/rfsa/adsp/libdirac-capiv2.so
 vendor/lib/rfsa/adsp/libdspCV_skel.so
 vendor/lib/rfsa/adsp/libfastcvadsp.so
 vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
@@ -41,9 +39,7 @@ vendor/lib/hw/com.qualcomm.qti.ant@1.0-impl.so
 vendor/lib64/com.qualcomm.qti.ant@1.0.so
 vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 
-# Audio - from olive - QKQ1.191014.001
-etc/permissions/audiosphere.xml
-framework/audiosphere.jar
+# Audio - from LA.UM.9.6.2.r1-03600-89xx.0
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so
 vendor/lib/libacdbrtac.so
@@ -51,8 +47,10 @@ vendor/lib/libadiertac.so
 vendor/lib/libadm.so
 vendor/lib/libaudcal.so
 vendor/lib/libaudioalsa.so
+-vendor/lib/libaudioparsers.so
 vendor/lib/libdrc.so
-vendor/lib/soundfx/libasphere.so
+vendor/lib/libqtigef.so
+vendor/lib/libsurround_3mic_proc.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
@@ -62,7 +60,8 @@ vendor/lib64/libacdbrtac.so
 vendor/lib64/libadiertac.so
 vendor/lib64/libaudcal.so
 vendor/lib64/libaudioalsa.so
-vendor/lib64/soundfx/libasphere.so
+-vendor/lib64/libaudioparsers.so
+vendor/lib64/libqtigef.so
 vendor/lib64/soundfx/libqcbassboost.so
 vendor/lib64/soundfx/libqcreverb.so
 vendor/lib64/soundfx/libqcvirt.so
@@ -189,6 +188,13 @@ vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc
 vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib64/libwvhidl.so
 vendor/lib64/mediadrm/libwvdrmengine.so
+
+# DSP - from LA.UM.9.6.2.r1-03600-89xx.0
+vendor/bin/dspservice
+vendor/etc/init/vendor.qti.hardware.dsp@1.0-service.rc
+vendor/etc/seccomp_policy/vendor.qti.hardware.dsp.policy
+vendor/lib/vendor.qti.hardware.dsp@1.0.so
+vendor/lib64/vendor.qti.hardware.dsp@1.0.so
 
 # FM - from olive - QKQ1.191014.001
 -product/lib/vendor.qti.hardware.fm@1.0.so
@@ -337,7 +343,7 @@ vendor/lib64/libkeymasterutils.so
 vendor/lib64/libkeymasterprovision.so
 vendor/lib64/libkeymasterdeviceutils.so
 
-# Listen - from olive - QKQ1.191014.001
+# Listen - from LA.UM.9.6.2.r1-03600-89xx.0
 vendor/lib/hw/sound_trigger.primary.msm8937.so
 vendor/lib/libadpcmdec.so
 vendor/lib/libsmwrapper.so
