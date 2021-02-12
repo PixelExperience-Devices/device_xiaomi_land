@@ -92,8 +92,7 @@ PRODUCT_PACKAGES += \
     libaudio-resampler \
     libqcompostprocbundle \
     libqcomvisualizer \
-    libqcomvoiceprocessing \
-    libvolumelistener
+    libqcomvoiceprocessing
 
 # Audio mixer
 PRODUCT_COPY_FILES += \
