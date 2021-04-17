@@ -355,9 +355,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.1-service.custom
 
-# Qcom soong namespace
-QCOM_SOONG_NAMESPACE := hardware/qcom-caf/msm8996-r
-
 # RIL
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.2 \
