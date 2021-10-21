@@ -18,11 +18,7 @@ cc_library_static {
     name: "libinit_land",
     recovery_available: true,
     srcs: ["init_land.cpp"],
-    include_dirs: [
-        "system/core/base/include",
-        "system/core/init",
-        "external/selinux/libselinux/include"
-    ],
+    include_dirs: ["system/core/init"],
     shared_libs: [
         "libbase",
     ]

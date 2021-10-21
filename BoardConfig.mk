@@ -165,8 +165,7 @@ DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/compatibility_matrix.xml
 
 # Init
-TARGET_INIT_VENDOR_LIB         := libinit_land
-TARGET_PLATFORM_DEVICE_BASE    := /devices/soc/
+TARGET_INIT_VENDOR_LIB         := //$(DEVICE_PATH):libinit_land
 TARGET_RECOVERY_DEVICE_MODULES := libinit_land
 
 # Keystore
