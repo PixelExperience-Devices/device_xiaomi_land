@@ -102,10 +102,6 @@ function blob_fixup() {
         "${PATCHELF}" --replace-needed "libprotobuf-cpp-full.so" "libprotobuf-cpp-full-v29.so" "${2}"
         ;;
 
-    for LIB in $(grep -lr "/data/misc/camera" .); do
-        sed -i "s|/data/misc/camera|/data/vendor/qcam|g" "$LIB" || true
-    done
-
     esac
 }
 
