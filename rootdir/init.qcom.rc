@@ -222,6 +222,12 @@ on boot
     chown system system /sys/android_touch/doubletap2wake
     chmod 660 /sys/android_touch/doubletap2wake
 
+    # Enable qcrild and data services
+    enable vendor.qcrild
+    enable vendor.qcrild2
+    enable vendor.dataqti
+    enable vendor.dataadpl
+
 # msm specific files that need to be created on /data
 on post-fs-data
     mkdir /data/vendor/misc 01771 system system
