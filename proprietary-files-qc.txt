@@ -472,6 +472,13 @@ vendor/lib64/vendor.display.color@1.1.so
 vendor/lib64/vendor.display.color@1.2.so
 vendor/lib64/vendor.display.postproc@1.0.so
 
+# QC RIL - from DPL_sprout - RKQ1.200928.002
+vendor/bin/hw/qcrild
+vendor/etc/init/qcrild.rc
+vendor/lib64/libqcrilFramework.so
+vendor/lib64/libril-qc-hal-qmi.so
+vendor/lib64/qcrild_librilutils.so
+
 # QDutils - from LA.UM.9.6.2.r1-03600-89xx.0
 vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
