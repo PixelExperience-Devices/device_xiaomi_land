@@ -56,10 +56,6 @@ fi
 function blob_fixup() {
     case "${1}" in
 
-    product/lib64/libdpmframework.so)
-        sed -i "s/libhidltransport.so/libcutils-v29.so\x00\x00\x00/" "${2}"
-        ;;
-
     vendor/bin/gx_fpcmd|vendor/bin/gx_fpd)
         "${PATCHELF}" --remove-needed "libbacktrace.so" "${2}"
         "${PATCHELF}" --remove-needed "libunwind.so" "${2}"
@@ -96,10 +92,6 @@ function blob_fixup() {
 
     vendor/lib64/libwvhidl.so)
         "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v29.so" "${2}"
-        ;;
-
-    vendor/lib64/libsettings.so)
-        "${PATCHELF}" --replace-needed "libprotobuf-cpp-full.so" "libprotobuf-cpp-full-v29.so" "${2}"
         ;;
 
     esac
