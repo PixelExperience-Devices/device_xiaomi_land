@@ -1,1 +1,0 @@
-allow cnd wifi_prop:file { read open getattr };
