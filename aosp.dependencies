@@ -8,6 +8,6 @@
     "remote": "pixel-devices-blobs",
     "repository": "vendor_xiaomi_land",
     "target_path": "vendor/xiaomi",
-    "branch": "eleven"
+    "branch": "twelve"
   }
 ]

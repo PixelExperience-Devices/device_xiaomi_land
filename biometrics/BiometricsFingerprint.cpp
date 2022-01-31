@@ -186,8 +186,35 @@ Return<RequestStatus> BiometricsFingerprint::cancel() {
     return ErrorFilter(ret);
 }
 
+#define MAX_FINGERPRINTS 100
+
+typedef int (*enumerate_2_0)(struct fingerprint_device *dev, fingerprint_finger_id_t *results,
+        uint32_t *max_size);
+
 Return<RequestStatus> BiometricsFingerprint::enumerate()  {
-    return ErrorFilter(mDevice->enumerate(mDevice));
+    fingerprint_finger_id_t results[MAX_FINGERPRINTS];
+    uint32_t n = MAX_FINGERPRINTS;
+
+    enumerate_2_0 enumerate = (enumerate_2_0) mDevice->enumerate;
+    int total_templates = enumerate(mDevice, results, &n);
+
+    ALOGD("Got %d enumerated templates, retval = %d", n, total_templates);
+
+    // TODO: Remove once enumeration is confirmed to work on Goodix
+    if (is_goodix && n == MAX_FINGERPRINTS) {
+        ALOGD("Skipping enumerate()");
+        return RequestStatus::SYS_EINVAL;
+    }
+
+    fingerprint_msg_t msg;
+    msg.type = FINGERPRINT_TEMPLATE_ENUMERATING;
+    for (uint32_t i = 0; i < n; i++) {
+        msg.data.enumerated.finger = results[i];
+        msg.data.enumerated.remaining_templates = n - i - 1;
+        sInstance->notify(&msg);
+    }
+
+    return RequestStatus::SYS_OK;
 }
 
 Return<RequestStatus> BiometricsFingerprint::remove(uint32_t gid, uint32_t fid) {
