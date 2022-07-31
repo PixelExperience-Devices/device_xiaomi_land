@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <device name="Android">
+    <item name="none">0</item>
     <item name="screen.on">63</item>
     <item name="screen.full">261</item>
     <array name="cpu.clusters.cores">
@@ -7,6 +8,18 @@
         <value>4</value>
     </array>
     <array name="cpu.core_speeds.cluster0">
+        <value>768000</value>
+        <value>902400</value>
+        <value>998400</value>
+        <value>1094400</value>
+    </array>
+    <array name="cpu.core_power.cluster0">
+        <value>43</value>
+        <value>54</value>
+        <value>64</value>
+        <value>79</value>
+    </array>
+    <array name="cpu.core_speeds.cluster1">
         <value>960000</value>
         <value>1094400</value>
         <value>1209600</value>
@@ -14,25 +27,13 @@
         <value>1344000</value>
         <value>1401000</value>
     </array>
-    <array name="cpu.core_power.cluster0">
-        <value>68.95</value>
-        <value>91.34</value>
-        <value>117.30</value>
-        <value>119.86</value>
-        <value>136.83</value>
-        <value>145.08</value>
-    </array>
-    <array name="cpu.core_speeds.cluster1">
-        <value>768000</value>
-        <value>902400</value>
-        <value>998400</value>
-        <value>1094400</value>
-    </array>
     <array name="cpu.core_power.cluster1">
-        <value>41.13</value>
-        <value>48.72</value>
-        <value>60.89</value>
-        <value>97.6</value>
+        <value>59</value>
+        <value>75</value>
+        <value>91</value>
+        <value>94</value>
+        <value>108</value>
+        <value>111</value>
     </array>
     <item name="cpu.awake">1.6</item>
     <item name="cpu.idle">1.6</item>
